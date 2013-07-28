@@ -1,0 +1,56 @@
+<polymer-element name="rpg-sprite" attributes="x y maxSpeed">
+    <template>
+        <style>
+            @host {
+                :scope {
+                    display: block;
+                    position: absolute;
+                }
+            }
+
+            #sprite {
+                background-color: red;
+                height: 32px;
+                width: 32px;
+            }
+        </style>
+        <div id="sprite"></div>
+    </template>
+    <script>
+        Polymer('rpg-sprite', {
+            maxSpeed: 1,
+            velocity: {
+                x: 0,
+                y: 0
+            },
+            x: 0,
+            y: 0,
+            downStart: function() {
+                this.velocity.y = this.maxSpeed;
+            },
+            goTo: function(x, y) {
+                this.x = x;
+                this.y = y;
+            },
+            leftStart: function() {
+                this.velocity.x = -this.maxSpeed;
+            },
+            render: function() {
+                this.x = Math.max(0, this.x + this.velocity.x);
+                this.y = Math.max(0, this.y + this.velocity.y);
+            },
+            rightStart: function() {
+                this.velocity.x = this.maxSpeed;
+            },
+            upStart: function() {
+                this.velocity.y = -this.maxSpeed;
+            },
+            xChanged: function() {
+                this.style.left = this.x + 'px';
+            },
+            yChanged: function() {
+                this.style.top = this.y + 'px';
+            }
+        });
+    </script>
+</polymer-element>

@@ -3,11 +3,64 @@
     <head>
         <meta charset="utf-8">
         <title>Shauna's RPG</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <script data-main="main" src="lib/require.js"></script>
+
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="lib/polymer.min.js"></script>
+        <link rel="import" href="components/rpg-scene.html">
+        <link rel="import" href="components/rpg-sprite.html">
     </head>
     <body>
-        <h1>Shauna's RPG</h1>
+        <rpg-scene>
+            <rpg-sprite id="player-avatar" x="100" y="100" maxSpeed="3"></rpg-sprite>
+        </rpg-scene>
+        <script>
+            var playerAvatar = document.getElementById('player-avatar');
+
+            document.addEventListener('WebComponentsReady', function() {
+                init();
+                var oldtime = Date.now();
+                renderLoop();
+
+                function init() {
+                    document.body.addEventListener('keydown', function (event) {
+                        switch (event.keyCode) {
+                            case 37:
+                            case 65:
+                                playerAvatar.leftStart();
+                                break;
+                            case 39:
+                            case 68:
+                                playerAvatar.rightStart();
+                                break;
+                            case 38:
+                            case 87:
+                                playerAvatar.upStart();
+                                break;
+                            case 40:
+                            case 83:
+                                playerAvatar.downStart();
+                                break;
+                            default:
+                                console.log(event.keyCode);
+                        }
+                    });
+                }
+
+                function render() {
+                    playerAvatar.render();
+                }
+
+                function renderLoop(time) {
+                    requestAnimationFrame(renderLoop);
+
+                    fps = 1000 / (time - oldtime)
+                    oldtime = time;
+                    //console.log(fps);
+
+                    render();
+                };
+            });
+        </script>
     </body>
 </html>
