@@ -7,59 +7,29 @@
         <link rel="stylesheet" href="css/main.css">
 
         <script src="lib/polymer.min.js"></script>
-        <link rel="import" href="components/rpg-scene.html">
-        <link rel="import" href="components/rpg-sprite.html">
+        <link rel="import" href="components/rpg-game/rpg-game.html">
     </head>
     <body>
-        <rpg-scene>
-            <rpg-sprite id="player-avatar" x="100" y="100" maxSpeed="3"></rpg-sprite>
-        </rpg-scene>
+        <rpg-game></rpg-game>
         <script>
-            var playerAvatar = document.getElementById('player-avatar');
-
             document.addEventListener('WebComponentsReady', function() {
-                init();
+                var games = document.getElementsByTagName('rpg-game');
+                document.body.addEventListener('keydown', games[0].onKeydown.bind(games[0]));
+                document.body.addEventListener('keyup', games[0].onKeyup.bind(games[0]));
                 var oldtime = Date.now();
                 renderLoop();
-
-                function init() {
-                    document.body.addEventListener('keydown', function (event) {
-                        switch (event.keyCode) {
-                            case 37:
-                            case 65:
-                                playerAvatar.leftStart();
-                                break;
-                            case 39:
-                            case 68:
-                                playerAvatar.rightStart();
-                                break;
-                            case 38:
-                            case 87:
-                                playerAvatar.upStart();
-                                break;
-                            case 40:
-                            case 83:
-                                playerAvatar.downStart();
-                                break;
-                            default:
-                                console.log(event.keyCode);
-                        }
-                    });
-                }
-
-                function render() {
-                    playerAvatar.render();
-                }
 
                 function renderLoop(time) {
                     requestAnimationFrame(renderLoop);
 
-                    fps = 1000 / (time - oldtime)
-                    oldtime = time;
-                    //console.log(fps);
+                    for (var i = 0; i < games.length; ++i) {
+                        games[i].render();
+                    }
 
-                    render();
-                };
+                    // fps = 1000 / (time - oldtime)
+                    // oldtime = time;
+                    // console.log(fps);
+                }
             });
         </script>
     </body>

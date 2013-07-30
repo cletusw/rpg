@@ -1,0 +1,73 @@
+<link rel="import" href="../rpg-scene/rpg-scene.html">
+<link rel="import" href="../rpg-sprite/rpg-sprite.html">
+
+<polymer-element name="rpg-game">
+    <template>
+        <style>
+            @host {
+                :scope {
+                    display: block;
+                }
+            }
+        </style>
+        <rpg-scene>
+            <img src="img/example-bg.png">
+            <rpg-sprite id="player-avatar" x="100" y="100" maxSpeed="3"></rpg-sprite>
+            <img src="img/example-fg.png">
+        </rpg-scene>
+    </template>
+    <script>
+        Polymer('rpg-game', {
+            onKeydown: function (event) {
+                var playerAvatar = this.$['player-avatar'];
+                switch (event.keyCode) {
+                    case 37:
+                    case 65:
+                        playerAvatar.leftStart();
+                        break;
+                    case 39:
+                    case 68:
+                        playerAvatar.rightStart();
+                        break;
+                    case 38:
+                    case 87:
+                        playerAvatar.upStart();
+                        break;
+                    case 40:
+                    case 83:
+                        playerAvatar.downStart();
+                        break;
+                    default:
+                        console.log(event.keyCode);
+                }
+            },
+            onKeyup: function (event) {
+                console.log('yeah');
+                var playerAvatar = this.$['player-avatar'];
+                switch (event.keyCode) {
+                    case 37:
+                    case 65:
+                        playerAvatar.leftStop();
+                        break;
+                    case 39:
+                    case 68:
+                        playerAvatar.rightStop();
+                        break;
+                    case 38:
+                    case 87:
+                        playerAvatar.upStop();
+                        break;
+                    case 40:
+                    case 83:
+                        playerAvatar.downStop();
+                        break;
+                    default:
+                        console.log(event.keyCode);
+                }
+            },
+            render: function() {
+                this.$['player-avatar'].render();
+            }
+        });
+    </script>
+</polymer-element>

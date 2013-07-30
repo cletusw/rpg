@@ -4,7 +4,6 @@
             @host {
                 :scope {
                     display: block;
-                    position: absolute;
                 }
             }
 
@@ -19,14 +18,14 @@
     <script>
         Polymer('rpg-sprite', {
             maxSpeed: 1,
-            velocity: {
-                x: 0,
-                y: 0
-            },
+            velocity: null,
             x: 0,
             y: 0,
             downStart: function() {
                 this.velocity.y = this.maxSpeed;
+            },
+            downStop: function() {
+                this.velocity.y = Math.min(this.velocity.y, 0);
             },
             goTo: function(x, y) {
                 this.x = x;
@@ -35,6 +34,9 @@
             leftStart: function() {
                 this.velocity.x = -this.maxSpeed;
             },
+            leftStop: function() {
+                this.velocity.x = Math.max(this.velocity.x, 0);
+            },
             render: function() {
                 this.x = Math.max(0, this.x + this.velocity.x);
                 this.y = Math.max(0, this.y + this.velocity.y);
@@ -42,14 +44,26 @@
             rightStart: function() {
                 this.velocity.x = this.maxSpeed;
             },
+            rightStop: function() {
+                this.velocity.x = Math.min(this.velocity.x, 0);
+            },
+            ready: function() {
+                this.velocity = {
+                    x: 0,
+                    y: 0
+                };
+            },
             upStart: function() {
                 this.velocity.y = -this.maxSpeed;
             },
+            upStop: function() {
+                this.velocity.y = Math.max(this.velocity.y, 0);
+            },
             xChanged: function() {
-                this.style.left = this.x + 'px';
+                this.style.webkitTransform = 'translateX(' + this.x + 'px) translateY(' + this.y + 'px)';
             },
             yChanged: function() {
-                this.style.top = this.y + 'px';
+                this.style.webkitTransform = 'translateX(' + this.x + 'px) translateY(' + this.y + 'px)';
             }
         });
     </script>

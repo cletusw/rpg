@@ -4,18 +4,20 @@
             @host {
                 :scope {
                     display: block;
-                    overflow: hidden;
                     position: relative;
                 }
+            }
+
+            /* @polyfill @host :not(:first-child) */
+            ::-webkit-distributed(:not(:first-child)) {
+                position: absolute;
+                top: 0;
+                left: 0;
             }
         </style>
         <content></content>
     </template>
     <script>
-        Polymer('rpg-scene', {
-            ready: function() {
-
-            }
-        });
+        Polymer('rpg-scene');
     </script>
 </polymer-element>
