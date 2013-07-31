@@ -1,4 +1,6 @@
-<polymer-element name="rpg-sprite" attributes="x y maxSpeed">
+<link rel="import" href="../polymer-ajax/polymer-ajax.html">
+
+<polymer-element name="rpg-sprite" attributes="maxSpeed x y">
     <template>
         <style>
             @host {
@@ -6,14 +8,8 @@
                     display: block;
                 }
             }
-
-            #sprite {
-                background-color: red;
-                height: 32px;
-                width: 32px;
-            }
         </style>
-        <div id="sprite"></div>
+        <content></content>
     </template>
     <script>
         Polymer('rpg-sprite', {

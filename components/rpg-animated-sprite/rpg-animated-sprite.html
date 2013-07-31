@@ -1,0 +1,25 @@
+<link rel="import" href='../rpg-animation/rpg-animation.html'>
+<link rel="import" href="../rpg-sprite/rpg-sprite.html">
+
+<polymer-element name="rpg-animated-sprite" extends="rpg-sprite" attributes="src">
+    <template>
+        <style>
+            /* @polyfill @host > * */
+            ::-webkit-distributed(> *) {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        </style>
+        <rpg-animation id="animation" src="{{src}}"></rpg-animation>
+        <shadow></shadow>
+    </template>
+    <script>
+        Polymer('rpg-animated-sprite', {
+            render: function() {
+                this.super();
+                this.$.animation.render();
+            }
+        });
+    </script>
+</polymer-element>

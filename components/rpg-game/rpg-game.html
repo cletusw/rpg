@@ -1,5 +1,5 @@
+<link rel="import" href="../rpg-animated-sprite/rpg-animated-sprite.html">
 <link rel="import" href="../rpg-scene/rpg-scene.html">
-<link rel="import" href="../rpg-sprite/rpg-sprite.html">
 
 <polymer-element name="rpg-game">
     <template>
@@ -12,8 +12,8 @@
         </style>
         <rpg-scene>
             <img src="img/example-bg.png">
-            <rpg-sprite id="player-avatar" x="100" y="100" maxSpeed="3"></rpg-sprite>
-            <img src="img/example-fg.png">
+            <rpg-animated-sprite id="player-avatar" x="100" y="100" maxSpeed="3" src="img/Riku.png"></rpg-animated-sprite>
+            <!--<img src="img/example-fg.png">-->
         </rpg-scene>
     </template>
     <script>
@@ -42,7 +42,6 @@
                 }
             },
             onKeyup: function (event) {
-                console.log('yeah');
                 var playerAvatar = this.$['player-avatar'];
                 switch (event.keyCode) {
                     case 37:

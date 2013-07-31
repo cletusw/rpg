@@ -1,0 +1,92 @@
+<polymer-element name="rpg-animation" attributes="src">
+    <template>
+        <style>
+            @host {
+                :scope {
+                    display: block;
+                }
+            }
+
+            #sprite {
+                background-color: red;
+                overflow: hidden;
+                position: relative;
+            }
+
+            #sprite-img {
+                position: absolute;
+            }
+        </style>
+        <div id="sprite" style="height: {{height}}px; width: {{width}}px;">
+            <img id="sprite-img" src="{{src}}" style="left: {{imgX}}px; top: {{imgY}}px;">
+        </div>
+        <polymer-ajax auto url="{{src}}.json" handleAs="json" on-polymer-response="onSpriteMetadataLoaded"></polymer-ajax>
+    </template>
+    <script>
+        Polymer('rpg-animation', {
+            animations: {
+                'loading': {
+                    frames: [{
+                        offset: {
+                            x: 0,
+                            y: 0
+                        },
+                        rect: {
+                            height: 0,
+                            width: 0,
+                            x: 0,
+                            y: 0
+                        }
+                    }]
+                }
+            },
+            currentAnimation: 'loading',
+            currentFrame: 0,
+            src: '',
+            get height() {
+                return this.animations[this.currentAnimation].frames[this.currentFrame].rect.height;
+            },
+            get width() {
+                return this.animations[this.currentAnimation].frames[this.currentFrame].rect.width;
+            },
+            get imgX() {
+                return -this.animations[this.currentAnimation].frames[this.currentFrame].rect.x;
+            },
+            get imgY() {
+                return -this.animations[this.currentAnimation].frames[this.currentFrame].rect.y;
+            },
+            currentAnimationChanged: function() {
+                this.currentFrame = 0;
+            },
+            onSpriteMetadataLoaded: function(event, response) {
+                response.response.spriteBuddy.animations.animation.forEach(function (animation) {
+                    var name = animation.name;
+                    delete animation.name;
+                    delete animation.number;
+                    if (animation.frames.frame instanceof Array) {
+                        animation.frames = animation.frames.frame;
+                    }
+                    else {
+                        animation.frames = [
+                            animation.frames.frame
+                        ];
+                    }
+                    for (var i = 0; i < animation.frames.length; ++i) {
+                        animation.frames[i] = animation.frames[i].layers.layer;
+                        delete animation.frames[i].number;
+                    }
+                    this.animations[name] = animation;
+                }, this);
+
+                this.currentAnimation = 'idle-down';
+
+                Object.getNotifier(this).notify({
+                    type: "updated"
+                });
+            },
+            render: function() {
+                this.currentFrame = (this.currentFrame + 1) % this.animations[this.currentAnimation].frames.length;
+            }
+        });
+    </script>
+</polymer-element>
