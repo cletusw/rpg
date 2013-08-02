@@ -33,7 +33,7 @@
             leftStop: function() {
                 this.velocity.x = Math.max(this.velocity.x, 0);
             },
-            render: function() {
+            render: function(currentTime) {
                 this.x = Math.max(0, this.x + this.velocity.x);
                 this.y = Math.max(0, this.y + this.velocity.y);
             },

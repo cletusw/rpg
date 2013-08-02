@@ -19,15 +19,15 @@
                 var oldtime = Date.now();
                 renderLoop();
 
-                function renderLoop(time) {
+                function renderLoop(currentTime) {
                     requestAnimationFrame(renderLoop);
 
                     for (var i = 0; i < games.length; ++i) {
-                        games[i].render();
+                        games[i].render(currentTime);
                     }
 
-                    // fps = 1000 / (time - oldtime)
-                    // oldtime = time;
+                    // fps = 1000 / (currentTime - oldtime)
+                    // oldtime = currentTime;
                     // console.log(fps);
                 }
             });

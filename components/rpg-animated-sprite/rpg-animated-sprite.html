@@ -16,9 +16,9 @@
     </template>
     <script>
         Polymer('rpg-animated-sprite', {
-            render: function() {
+            render: function(currentTime) {
                 this.super();
-                this.$.animation.render();
+                this.$.animation.render(currentTime);
             }
         });
     </script>

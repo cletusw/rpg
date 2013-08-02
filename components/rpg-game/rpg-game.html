@@ -64,8 +64,8 @@
                         console.log(event.keyCode);
                 }
             },
-            render: function() {
-                this.$['player-avatar'].render();
+            render: function(currentTime) {
+                this.$['player-avatar'].render(currentTime);
             }
         });
     </script>
