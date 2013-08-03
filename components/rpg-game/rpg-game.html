@@ -7,17 +7,34 @@
             @host {
                 :scope {
                     display: block;
+                    overflow: hidden;
                 }
             }
         </style>
-        <rpg-scene>
+        <rpg-scene style="-webkit-transform: translateX({{x}}px) translateY({{y}}px)">
             <img src="img/example-bg.png">
-            <rpg-animated-sprite id="player-avatar" x="100" y="100" maxSpeed="3" src="img/Riku.png"></rpg-animated-sprite>
+            <rpg-animated-sprite id="player-avatar" x="{{playerX}}" y="{{playerY}}" maxSpeed="3" src="img/Riku.png"></rpg-animated-sprite>
             <!--<img src="img/example-fg.png">-->
         </rpg-scene>
     </template>
     <script>
         Polymer('rpg-game', {
+            height: 300,
+            playerX: 200,
+            playerY: 200,
+            width: 400,
+            get x() {
+                return this.width / 2 - this.playerX;
+            },
+            get y() {
+                return this.height / 2 - this.playerY;
+            },
+            heightChanged: function() {
+                this.style.height = this.height + 'px';
+            },
+            widthChanged: function() {
+                this.style.width = this.width + 'px';
+            },
             onKeydown: function (event) {
                 var playerAvatar = this.$['player-avatar'];
                 switch (event.keyCode) {
