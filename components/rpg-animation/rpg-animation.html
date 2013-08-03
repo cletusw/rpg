@@ -1,4 +1,4 @@
-<polymer-element name="rpg-animation" attributes="direction src">
+<polymer-element name="rpg-animation" attributes="currentAnimation src">
     <template>
         <style>
             @host {
@@ -40,13 +40,10 @@
                     msPerFrame: 1000
                 }
             },
+            currentAnimation: 'idle-down',
             currentFrame: 0,
-            direction: '',
             lastUpdateTime: 0,
             src: '',
-            get currentAnimation() {
-                return this.direction ? 'walk-' + this.direction : 'idle-down';
-            },
             get height() {
                 return this.animations[this.currentAnimation].frames[this.currentFrame].rect.height;
             },

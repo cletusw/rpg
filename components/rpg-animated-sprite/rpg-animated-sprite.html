@@ -11,11 +11,18 @@
                 left: 0;
             }
         </style>
-        <rpg-animation id="animation" src="{{src}}" direction="{{direction}}"></rpg-animation>
+        <rpg-animation id="animation" src="{{src}}" currentAnimation="{{currentAnimation}}"></rpg-animation>
         <shadow></shadow>
     </template>
     <script>
         Polymer('rpg-animated-sprite', {
+            oldDirection: 'down',
+            get currentAnimation() {
+                return this.direction ? 'walk-' + this.direction : 'idle-' + this.oldDirection;
+            },
+            directionChanged: function(oldValue) {
+                this.oldDirection = oldValue;
+            },
             render: function(currentTime) {
                 this.super();
                 this.$.animation.render(currentTime);
