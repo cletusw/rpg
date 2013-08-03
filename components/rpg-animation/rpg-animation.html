@@ -7,17 +7,17 @@
                 }
             }
 
-            #sprite {
+            #clip {
                 overflow: hidden;
                 position: relative;
             }
 
-            #sprite-img {
+            #image {
                 position: absolute;
             }
         </style>
-        <div id="sprite" style="height: {{height}}px; width: {{width}}px;">
-            <img id="sprite-img" src="{{src}}" style="left: {{imgX}}px; top: {{imgY}}px;">
+        <div id="clip" style="height: {{height}}px; width: {{width}}px;">
+            <img id="image" src="{{src}}" style="left: {{x}}px; top: {{y}}px;">
         </div>
         <polymer-ajax auto url="{{src}}.json" handleAs="json" on-polymer-response="onSpriteMetadataLoaded"></polymer-ajax>
     </template>
@@ -50,10 +50,10 @@
             get width() {
                 return this.animations[this.currentAnimation].frames[this.currentFrame].rect.width;
             },
-            get imgX() {
+            get x() {
                 return -this.animations[this.currentAnimation].frames[this.currentFrame].rect.x;
             },
-            get imgY() {
+            get y() {
                 return -this.animations[this.currentAnimation].frames[this.currentFrame].rect.y;
             },
             currentAnimationChanged: function() {
