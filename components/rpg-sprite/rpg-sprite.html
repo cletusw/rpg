@@ -14,34 +14,35 @@
     <script>
         Polymer('rpg-sprite', {
             maxSpeed: 1,
-            velocity: null,
+            velocityX: 0,
+            velocityY: 0,
             x: 0,
             y: 0,
             downStart: function() {
-                this.velocity.y = this.maxSpeed;
+                this.velocityY = this.maxSpeed;
             },
             downStop: function() {
-                this.velocity.y = Math.min(this.velocity.y, 0);
+                this.velocityY = Math.min(this.velocityY, 0);
             },
             goTo: function(x, y) {
                 this.x = x;
                 this.y = y;
             },
             leftStart: function() {
-                this.velocity.x = -this.maxSpeed;
+                this.velocityX = -this.maxSpeed;
             },
             leftStop: function() {
-                this.velocity.x = Math.max(this.velocity.x, 0);
+                this.velocityX = Math.max(this.velocityX, 0);
             },
             render: function(currentTime) {
-                this.x = Math.max(0, this.x + this.velocity.x);
-                this.y = Math.max(0, this.y + this.velocity.y);
+                this.x = Math.max(0, this.x + this.velocityX);
+                this.y = Math.max(0, this.y + this.velocityY);
             },
             rightStart: function() {
-                this.velocity.x = this.maxSpeed;
+                this.velocityX = this.maxSpeed;
             },
             rightStop: function() {
-                this.velocity.x = Math.min(this.velocity.x, 0);
+                this.velocityX = Math.min(this.velocityX, 0);
             },
             ready: function() {
                 this.velocity = {
@@ -50,10 +51,10 @@
                 };
             },
             upStart: function() {
-                this.velocity.y = -this.maxSpeed;
+                this.velocityY = -this.maxSpeed;
             },
             upStop: function() {
-                this.velocity.y = Math.max(this.velocity.y, 0);
+                this.velocityY = Math.max(this.velocityY, 0);
             },
             xChanged: function() {
                 this.style.webkitTransform = 'translateX(' + this.x + 'px) translateY(' + this.y + 'px)';
