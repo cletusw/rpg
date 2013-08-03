@@ -1,4 +1,4 @@
-<polymer-element name="rpg-animation" attributes="src">
+<polymer-element name="rpg-animation" attributes="direction src">
     <template>
         <style>
             @host {
@@ -24,7 +24,7 @@
     <script>
         Polymer('rpg-animation', {
             animations: {
-                'loading': {
+                'idle-down': {
                     frames: [{
                         offset: {
                             x: 0,
@@ -40,10 +40,13 @@
                     msPerFrame: 1000
                 }
             },
-            currentAnimation: 'loading',
             currentFrame: 0,
+            direction: '',
             lastUpdateTime: 0,
             src: '',
+            get currentAnimation() {
+                return this.direction ? 'walk-' + this.direction : 'idle-down';
+            },
             get height() {
                 return this.animations[this.currentAnimation].frames[this.currentFrame].rect.height;
             },
@@ -80,8 +83,6 @@
                     }
                     this.animations[name] = animation;
                 }, this);
-
-                this.currentAnimation = 'idle-down';
 
                 Object.getNotifier(this).notify({
                     type: "updated"

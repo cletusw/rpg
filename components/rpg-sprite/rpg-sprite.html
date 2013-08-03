@@ -18,6 +18,11 @@
             velocityY: 0,
             x: 0,
             y: 0,
+            get direction() {
+                var horizontal = (this.velocityX < 0) ? 'left' : ((this.velocityX > 0) ? 'right' : '');
+                var vertical = (this.velocityY < 0) ? 'up' : ((this.velocityY > 0) ? 'down' : '');
+                return horizontal + vertical;
+            },
             downStart: function() {
                 this.velocityY = this.maxSpeed;
             },
