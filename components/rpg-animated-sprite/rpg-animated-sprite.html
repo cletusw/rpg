@@ -23,9 +23,9 @@
             directionChanged: function(oldValue) {
                 this.oldDirection = oldValue;
             },
-            render: function(currentTime) {
+            prerender: function(currentTime) {
                 this.super();
-                this.$.animation.render(currentTime);
+                this.$.animation.prerender(currentTime);
             }
         });
     </script>

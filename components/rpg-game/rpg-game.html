@@ -83,8 +83,8 @@
                         console.log(event.keyCode);
                 }
             },
-            render: function(currentTime) {
-                this.$['player-avatar'].render(currentTime);
+            prerender: function(currentTime) {
+                this.$['player-avatar'].prerender(currentTime);
             }
         });
     </script>

@@ -97,7 +97,7 @@
                     type: "updated"
                 });
             },
-            render: function(currentTime) {
+            prerender: function(currentTime) {
                 var delta = currentTime - this.lastUpdateTime;
                 if (delta > this.animations[this.currentAnimation].msPerFrame) {
                     this.lastUpdateTime = currentTime;

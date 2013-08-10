@@ -10,21 +10,18 @@
         <link rel="import" href="components/rpg-game/rpg-game.html">
     </head>
     <body>
-        <rpg-game height="300" width="400"></rpg-game>
+        <rpg-game id="rpg" height="300" width="400"></rpg-game>
         <script>
             document.addEventListener('WebComponentsReady', function() {
-                var games = document.getElementsByTagName('rpg-game');
-                document.body.addEventListener('keydown', games[0].onKeydown.bind(games[0]));
-                document.body.addEventListener('keyup', games[0].onKeyup.bind(games[0]));
+                var game = document.getElementById('rpg');
+                document.body.addEventListener('keydown', game.onKeydown.bind(game));
+                document.body.addEventListener('keyup', game.onKeyup.bind(game));
 
                 renderLoop();
 
                 function renderLoop(currentTime) {
                     requestAnimationFrame(renderLoop);
-
-                    for (var i = 0; i < games.length; ++i) {
-                        games[i].render(currentTime);
-                    }
+                    game.prerender(currentTime);
                 }
             });
         </script>
