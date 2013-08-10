@@ -7,22 +7,22 @@
                 }
             }
 
-            #anchor {
+            .anchor {
                 position: relative;
             }
 
-            #clip {
+            .clip {
                 overflow: hidden;
                 position: absolute;
             }
 
-            #image {
+            .image {
                 position: absolute;
             }
         </style>
-        <div id="anchor">
-            <div id="clip" style="height: {{height}}px; left: {{offsetX}}px; top: {{offsetY}}px; width: {{width}}px;">
-                <img id="image" src="{{src}}" style="left: {{x}}px; top: {{y}}px;">
+        <div class="anchor">
+            <div class="clip" style="height: {{height}}px; left: {{offsetX}}px; top: {{offsetY}}px; width: {{width}}px;">
+                <img class="image" src="{{src}}" style="left: {{x}}px; top: {{y}}px;">
             </div>
         </div>
         <polymer-ajax auto url="{{src}}.json" handleAs="json" on-polymer-response="onSpriteMetadataLoaded"></polymer-ajax>
