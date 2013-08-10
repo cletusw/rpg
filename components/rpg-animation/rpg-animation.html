@@ -7,17 +7,23 @@
                 }
             }
 
+            #anchor {
+                position: relative;
+            }
+
             #clip {
                 overflow: hidden;
-                position: relative;
+                position: absolute;
             }
 
             #image {
                 position: absolute;
             }
         </style>
-        <div id="clip" style="height: {{height}}px; width: {{width}}px;">
-            <img id="image" src="{{src}}" style="left: {{x}}px; top: {{y}}px;">
+        <div id="anchor">
+            <div id="clip" style="height: {{height}}px; left: {{offsetX}}px; top: {{offsetY}}px; width: {{width}}px;">
+                <img id="image" src="{{src}}" style="left: {{x}}px; top: {{y}}px;">
+            </div>
         </div>
         <polymer-ajax auto url="{{src}}.json" handleAs="json" on-polymer-response="onSpriteMetadataLoaded"></polymer-ajax>
     </template>
@@ -46,6 +52,12 @@
             src: '',
             get height() {
                 return this.animations[this.currentAnimation].frames[this.currentFrame].rect.height;
+            },
+            get offsetX() {
+                return this.animations[this.currentAnimation].frames[this.currentFrame].offset.x;
+            },
+            get offsetY() {
+                return this.animations[this.currentAnimation].frames[this.currentFrame].offset.y;
             },
             get width() {
                 return this.animations[this.currentAnimation].frames[this.currentFrame].rect.width;
