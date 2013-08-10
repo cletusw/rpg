@@ -300,33 +300,6 @@
                 "number": 6
             }, {
                 "speed": 66.67,
-                "name": "walk-right",
-                "frames": {
-                    "frame": {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 1,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 56,
-                                    "x": 125,
-                                    "y": 4,
-                                    "width": 19
-                                },
-                                "offset": {
-                                    "y": -28,
-                                    "x": 6
-                                },
-                                "number": 1
-                            }
-                        }
-                    }
-                },
-                "loop": true,
-                "number": 6
-            }, {
-                "speed": 66.67,
                 "name": "walk-leftup",
                 "frames": {
                     "frame": [{
