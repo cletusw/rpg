@@ -1,6 +1,6 @@
 <link rel="import" href="../polymer-ajax/polymer-ajax.html">
 
-<polymer-element name="rpg-sprite" attributes="maxSpeed x y">
+<polymer-element name="rpg-sprite" attributes="height maxSpeed width x y">
     <template>
         <style>
             @host {
@@ -13,9 +13,11 @@
     </template>
     <script>
         Polymer('rpg-sprite', {
+            height: 0,
             maxSpeed: 1,
             velocityX: 0,
             velocityY: 0,
+            width: 0,
             x: 0,
             y: 0,
             get direction() {
@@ -32,6 +34,9 @@
             goTo: function(x, y) {
                 this.x = x;
                 this.y = y;
+            },
+            heightChanged: function() {
+                this.style.height = this.height + 'px';
             },
             leftStart: function() {
                 this.velocityX = -this.maxSpeed;
@@ -60,6 +65,9 @@
             },
             upStop: function() {
                 this.velocityY = Math.max(this.velocityY, 0);
+            },
+            widthChanged: function() {
+                this.style.width = this.width + 'px';
             },
             xChanged: function() {
                 this.style.webkitTransform = 'translateX(' + this.x + 'px) translateY(' + this.y + 'px)';
