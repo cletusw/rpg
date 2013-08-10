@@ -1,7 +1,7 @@
 <link rel="import" href="../rpg-animated-sprite/rpg-animated-sprite.html">
 <link rel="import" href="../rpg-scene/rpg-scene.html">
 
-<polymer-element name="rpg-game">
+<polymer-element name="rpg-game" attributes="height width">
     <template>
         <style>
             @host {
@@ -19,15 +19,17 @@
     </template>
     <script>
         Polymer('rpg-game', {
-            height: 300,
+            height: 0,
             playerX: 200,
             playerY: 200,
-            width: 400,
+            sceneHeight: 640,
+            sceneWidth: 640,
+            width: 0,
             get x() {
-                return this.width / 2 - this.playerX;
+                return Math.max(this.width - this.sceneWidth, Math.min(0, this.width / 2 - this.playerX));
             },
             get y() {
-                return this.height / 2 - this.playerY;
+                return Math.max(this.height - this.sceneHeight, Math.min(0, this.height / 2 - this.playerY));
             },
             heightChanged: function() {
                 this.style.height = this.height + 'px';
