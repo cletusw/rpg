@@ -16,7 +16,7 @@
                 var games = document.getElementsByTagName('rpg-game');
                 document.body.addEventListener('keydown', games[0].onKeydown.bind(games[0]));
                 document.body.addEventListener('keyup', games[0].onKeyup.bind(games[0]));
-                var oldtime = Date.now();
+
                 renderLoop();
 
                 function renderLoop(currentTime) {
@@ -25,10 +25,6 @@
                     for (var i = 0; i < games.length; ++i) {
                         games[i].render(currentTime);
                     }
-
-                    // fps = 1000 / (currentTime - oldtime)
-                    // oldtime = currentTime;
-                    // console.log(fps);
                 }
             });
         </script>
