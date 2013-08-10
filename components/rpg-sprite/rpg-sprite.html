@@ -45,8 +45,8 @@
                 this.velocityX = Math.max(this.velocityX, 0);
             },
             render: function(currentTime) {
-                this.x = Math.max(0, this.x + this.velocityX);
-                this.y = Math.max(0, this.y + this.velocityY);
+                this.x = this.x + this.velocityX;
+                this.y = this.y + this.velocityY;
             },
             rightStart: function() {
                 this.velocityX = this.maxSpeed;
