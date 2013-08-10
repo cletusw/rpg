@@ -22,7 +22,7 @@
         </style>
         <div class="anchor">
             <div class="clip" style="height: {{height}}px; left: {{offsetX}}px; top: {{offsetY}}px; width: {{width}}px;">
-                <img class="image" src="{{src}}" style="left: {{x}}px; top: {{y}}px;">
+                <img class="image" src="{{src}}" style="left: {{imageX}}px; top: {{imageY}}px;">
             </div>
         </div>
         <polymer-ajax auto url="{{src}}.json" handleAs="json" on-polymer-response="onSpriteMetadataLoaded"></polymer-ajax>
@@ -62,10 +62,10 @@
             get width() {
                 return this.animations[this.currentAnimation].frames[this.currentFrame].rect.width;
             },
-            get x() {
+            get imageX() {
                 return -this.animations[this.currentAnimation].frames[this.currentFrame].rect.x;
             },
-            get y() {
+            get imageY() {
                 return -this.animations[this.currentAnimation].frames[this.currentFrame].rect.y;
             },
             currentAnimationChanged: function() {
