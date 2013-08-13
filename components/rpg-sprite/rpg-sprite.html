@@ -1,6 +1,7 @@
 <link rel="import" href="../polymer-ajax/polymer-ajax.html">
+<link rel="import" href="../rpg-collidable/rpg-collidable.html">
 
-<polymer-element name="rpg-sprite" attributes="height maxSpeed width x y">
+<polymer-element name="rpg-sprite" extends="rpg-collidable" attributes="maxSpeed">
     <template>
         <style>
             @host {
@@ -9,17 +10,13 @@
                 }
             }
         </style>
-        <content></content>
+        <shadow></shadow>
     </template>
     <script>
         Polymer('rpg-sprite', {
-            height: 0,
             maxSpeed: 1,
             velocityX: 0,
             velocityY: 0,
-            width: 0,
-            x: 0,
-            y: 0,
             get direction() {
                 var horizontal = (this.velocityX < 0) ? 'left' : ((this.velocityX > 0) ? 'right' : '');
                 var vertical = (this.velocityY < 0) ? 'up' : ((this.velocityY > 0) ? 'down' : '');
@@ -30,20 +27,6 @@
             },
             downStop: function() {
                 this.velocityY = Math.min(this.velocityY, 0);
-            },
-            goTo: function(x, y) {
-                this.x = x;
-                this.y = y;
-            },
-            heightChanged: function() {
-                this.style.height = this.height + 'px';
-            },
-            intersectsWith: function(other) {
-                if (this.x + this.width < other.x) return false;
-                if (this.x > other.x + other.width) return false;
-                if (this.y + this.height < other.y) return false;
-                if (this.y > other.y + other.height) return false;
-                return true;
             },
             leftStart: function() {
                 this.velocityX = -this.maxSpeed;
@@ -66,15 +49,6 @@
             },
             upStop: function() {
                 this.velocityY = Math.max(this.velocityY, 0);
-            },
-            widthChanged: function() {
-                this.style.width = this.width + 'px';
-            },
-            xChanged: function() {
-                this.style.webkitTransform = 'translateX(' + this.x + 'px) translateY(' + this.y + 'px)';
-            },
-            yChanged: function() {
-                this.style.webkitTransform = 'translateX(' + this.x + 'px) translateY(' + this.y + 'px)';
             }
         });
     </script>
