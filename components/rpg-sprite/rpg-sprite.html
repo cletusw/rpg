@@ -49,6 +49,10 @@
             },
             upStop: function() {
                 this.velocityY = Math.max(this.velocityY, 0);
+            },
+            yChanged: function() {
+                this.super();
+                this.style.zIndex = this.y;
             }
         });
     </script>
