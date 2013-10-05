@@ -107,7 +107,7 @@
                 this.$['sprite-0'].prerender(currentTime);
             },
             ready: function() {
-                var wanderers = this.shadowRoot.querySelectorAll('[ai=wandering]');
+                var wanderers = this.shadowRoot.querySelectorAll('[ai=wandering]').array();
                 setInterval(function() {
                     wanderers.forEach(function(sprite) {
                         if (sprite.velocityX) {
