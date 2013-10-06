@@ -2,58 +2,58 @@
 <link rel="import" href="../rpg-collidable/rpg-collidable.html">
 
 <polymer-element name="rpg-sprite" extends="rpg-collidable" attributes="maxSpeed">
-    <template>
-        <style>
-            @host {
-                :scope {
-                    display: block;
-                }
-            }
-        </style>
-        <shadow></shadow>
-    </template>
-    <script>
-        Polymer('rpg-sprite', {
-            maxSpeed: 1,
-            velocityX: 0,
-            velocityY: 0,
-            get direction() {
-                var horizontal = (this.velocityX < 0) ? 'left' : ((this.velocityX > 0) ? 'right' : '');
-                var vertical = (this.velocityY < 0) ? 'up' : ((this.velocityY > 0) ? 'down' : '');
-                return horizontal + vertical;
-            },
-            downStart: function() {
-                this.velocityY = this.maxSpeed;
-            },
-            downStop: function() {
-                this.velocityY = Math.min(this.velocityY, 0);
-            },
-            leftStart: function() {
-                this.velocityX = -this.maxSpeed;
-            },
-            leftStop: function() {
-                this.velocityX = Math.max(this.velocityX, 0);
-            },
-            prerender: function(currentTime) {
-                this.x = this.x + this.velocityX;
-                this.y = this.y + this.velocityY;
-            },
-            rightStart: function() {
-                this.velocityX = this.maxSpeed;
-            },
-            rightStop: function() {
-                this.velocityX = Math.min(this.velocityX, 0);
-            },
-            upStart: function() {
-                this.velocityY = -this.maxSpeed;
-            },
-            upStop: function() {
-                this.velocityY = Math.max(this.velocityY, 0);
-            },
-            yChanged: function() {
-                this.super();
-                this.style.zIndex = this.y;
-            }
-        });
-    </script>
+  <template>
+    <style>
+      @host {
+        :scope {
+          display: block;
+        }
+      }
+    </style>
+    <shadow></shadow>
+  </template>
+  <script>
+    Polymer('rpg-sprite', {
+      maxSpeed: 1,
+      velocityX: 0,
+      velocityY: 0,
+      get direction() {
+        var horizontal = (this.velocityX < 0) ? 'left' : ((this.velocityX > 0) ? 'right' : '');
+        var vertical = (this.velocityY < 0) ? 'up' : ((this.velocityY > 0) ? 'down' : '');
+        return horizontal + vertical;
+      },
+      downStart: function() {
+        this.velocityY = this.maxSpeed;
+      },
+      downStop: function() {
+        this.velocityY = Math.min(this.velocityY, 0);
+      },
+      leftStart: function() {
+        this.velocityX = -this.maxSpeed;
+      },
+      leftStop: function() {
+        this.velocityX = Math.max(this.velocityX, 0);
+      },
+      prerender: function(currentTime) {
+        this.x = this.x + this.velocityX;
+        this.y = this.y + this.velocityY;
+      },
+      rightStart: function() {
+        this.velocityX = this.maxSpeed;
+      },
+      rightStop: function() {
+        this.velocityX = Math.min(this.velocityX, 0);
+      },
+      upStart: function() {
+        this.velocityY = -this.maxSpeed;
+      },
+      upStop: function() {
+        this.velocityY = Math.max(this.velocityY, 0);
+      },
+      yChanged: function() {
+        this.super();
+        this.style.zIndex = this.y;
+      }
+    });
+  </script>
 </polymer-element>

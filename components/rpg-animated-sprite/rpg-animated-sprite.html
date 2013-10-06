@@ -2,31 +2,31 @@
 <link rel="import" href="../rpg-sprite/rpg-sprite.html">
 
 <polymer-element name="rpg-animated-sprite" extends="rpg-sprite" attributes="src">
-    <template>
-        <style>
-            /* @polyfill @host > * */
-            ::-webkit-distributed(> *) {
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
-        </style>
-        <rpg-animation id="animation" src="{{src}}" currentAnimation="{{currentAnimation}}"></rpg-animation>
-        <shadow></shadow>
-    </template>
-    <script>
-        Polymer('rpg-animated-sprite', {
-            oldDirection: 'down',
-            get currentAnimation() {
-                return this.direction ? 'walk-' + this.direction : 'idle-' + this.oldDirection;
-            },
-            directionChanged: function(oldValue) {
-                this.oldDirection = oldValue;
-            },
-            prerender: function(currentTime) {
-                this.super();
-                this.$.animation.prerender(currentTime);
-            }
-        });
-    </script>
+  <template>
+    <style>
+      /* @polyfill @host > * */
+      ::-webkit-distributed(> *) {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+    <rpg-animation id="animation" src="{{src}}" currentAnimation="{{currentAnimation}}"></rpg-animation>
+    <shadow></shadow>
+  </template>
+  <script>
+    Polymer('rpg-animated-sprite', {
+      oldDirection: 'down',
+      get currentAnimation() {
+        return this.direction ? 'walk-' + this.direction : 'idle-' + this.oldDirection;
+      },
+      directionChanged: function(oldValue) {
+        this.oldDirection = oldValue;
+      },
+      prerender: function(currentTime) {
+        this.super();
+        this.$.animation.prerender(currentTime);
+      }
+    });
+  </script>
 </polymer-element>

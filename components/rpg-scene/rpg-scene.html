@@ -1,53 +1,53 @@
 <polymer-element name="rpg-scene">
-    <template>
-        <style>
-            @host {
-                :scope {
-                    display: block;
-                    position: relative;
-                }
-            }
+  <template>
+    <style>
+      @host {
+        :scope {
+          display: block;
+          position: relative;
+        }
+      }
 
-            /* @polyfill @host > :not(:first-child) */
-            ::-webkit-distributed(> :not(:first-child)) {
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
-        </style>
-        <content id="content"></content>
-    </template>
-    <script>
-        Polymer('rpg-scene', {
-            prerender: function(currentTime) {
-                var collidables = Array.prototype.filter.call(this.$.content.getDistributedNodes(), function(element) {
-                    return element.intersectsWith;
-                });
-                for (var i = collidables.length - 1; i >= 0; --i) {
-                    for (var j = i - 1; j >= 0; --j) {
-                        var a = collidables[i];
-                        var b = collidables[j];
-                        if (a.intersectsWith(b)) {
-                            var signX = a.x > b.x ? 1 : -1;
-                            var signY = a.y > b.y ? 1 : -1;
-
-                            var intersectionWidth = Math.min(a.x + a.width, b.x + b.width) - Math.max(a.x, b.x);
-                            var intersectionHeight = Math.min(a.y + a.height, b.y + b.height) - Math.max(a.y, b.y);
-
-                            if (Math.abs(intersectionWidth) < Math.abs(intersectionHeight)) {
-                                a.x += intersectionWidth * signX;
-                            }
-                            else if (Math.abs(intersectionHeight) < Math.abs(intersectionWidth)) {
-                                a.y += intersectionHeight * signY;
-                            }
-                            else {
-                                a.x += intersectionWidth * signX;
-                                a.y += intersectionHeight * signY;
-                            }
-                        }
-                    }
-                }
-            }
+      /* @polyfill @host > :not(:first-child) */
+      ::-webkit-distributed(> :not(:first-child)) {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+    <content id="content"></content>
+  </template>
+  <script>
+    Polymer('rpg-scene', {
+      prerender: function(currentTime) {
+        var collidables = Array.prototype.filter.call(this.$.content.getDistributedNodes(), function(element) {
+          return element.intersectsWith;
         });
-    </script>
+        for (var i = collidables.length - 1; i >= 0; --i) {
+          for (var j = i - 1; j >= 0; --j) {
+            var a = collidables[i];
+            var b = collidables[j];
+            if (a.intersectsWith(b)) {
+              var signX = a.x > b.x ? 1 : -1;
+              var signY = a.y > b.y ? 1 : -1;
+
+              var intersectionWidth = Math.min(a.x + a.width, b.x + b.width) - Math.max(a.x, b.x);
+              var intersectionHeight = Math.min(a.y + a.height, b.y + b.height) - Math.max(a.y, b.y);
+
+              if (Math.abs(intersectionWidth) < Math.abs(intersectionHeight)) {
+                a.x += intersectionWidth * signX;
+              }
+              else if (Math.abs(intersectionHeight) < Math.abs(intersectionWidth)) {
+                a.y += intersectionHeight * signY;
+              }
+              else {
+                a.x += intersectionWidth * signX;
+                a.y += intersectionHeight * signY;
+              }
+            }
+          }
+        }
+      }
+    });
+  </script>
 </polymer-element>

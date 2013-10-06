@@ -1,110 +1,110 @@
 <polymer-element name="rpg-animation" attributes="currentAnimation src">
-    <template>
-        <style>
-            @host {
-                :scope {
-                    display: block;
-                }
-            }
+  <template>
+    <style>
+      @host {
+        :scope {
+          display: block;
+        }
+      }
 
-            .anchor {
-                position: relative;
-            }
+      .anchor {
+        position: relative;
+      }
 
-            .clip {
-                overflow: hidden;
-                position: absolute;
-            }
+      .clip {
+        overflow: hidden;
+        position: absolute;
+      }
 
-            .image {
-                position: absolute;
+      .image {
+        position: absolute;
+      }
+    </style>
+    <div class="anchor">
+      <div class="clip" style="height: {{height}}px; left: {{offsetX}}px; top: {{offsetY}}px; width: {{width}}px;">
+        <img class="image" src="{{src}}" style="left: {{imageX}}px; top: {{imageY}}px;">
+      </div>
+    </div>
+    <polymer-ajax auto url="{{src}}.json" handleAs="json" on-polymer-response="onSpriteMetadataLoaded"></polymer-ajax>
+  </template>
+  <script>
+    Polymer('rpg-animation', {
+      animations: {
+        'idle-down': {
+          frames: [{
+            offset: {
+              x: 0,
+              y: 0
+            },
+            rect: {
+              height: 0,
+              width: 0,
+              x: 0,
+              y: 0
             }
-        </style>
-        <div class="anchor">
-            <div class="clip" style="height: {{height}}px; left: {{offsetX}}px; top: {{offsetY}}px; width: {{width}}px;">
-                <img class="image" src="{{src}}" style="left: {{imageX}}px; top: {{imageY}}px;">
-            </div>
-        </div>
-        <polymer-ajax auto url="{{src}}.json" handleAs="json" on-polymer-response="onSpriteMetadataLoaded"></polymer-ajax>
-    </template>
-    <script>
-        Polymer('rpg-animation', {
-            animations: {
-                'idle-down': {
-                    frames: [{
-                        offset: {
-                            x: 0,
-                            y: 0
-                        },
-                        rect: {
-                            height: 0,
-                            width: 0,
-                            x: 0,
-                            y: 0
-                        }
-                    }],
-                    msPerFrame: 1000
-                }
-            },
-            currentAnimation: 'idle-down',
-            currentFrame: 0,
-            lastUpdateTime: 0,
-            src: '',
-            get height() {
-                return this.animations[this.currentAnimation].frames[this.currentFrame].rect.height;
-            },
-            get offsetX() {
-                return this.animations[this.currentAnimation].frames[this.currentFrame].offset.x;
-            },
-            get offsetY() {
-                return this.animations[this.currentAnimation].frames[this.currentFrame].offset.y;
-            },
-            get width() {
-                return this.animations[this.currentAnimation].frames[this.currentFrame].rect.width;
-            },
-            get imageX() {
-                return -this.animations[this.currentAnimation].frames[this.currentFrame].rect.x;
-            },
-            get imageY() {
-                return -this.animations[this.currentAnimation].frames[this.currentFrame].rect.y;
-            },
-            currentAnimationChanged: function() {
-                this.currentFrame = 0;
-            },
-            onSpriteMetadataLoaded: function(event, response) {
-                response.response.spriteBuddy.animations.animation.forEach(function (animation) {
-                    var name = animation.name;
-                    delete animation.name;
-                    delete animation.number;
-                    animation.msPerFrame = animation.speed;
-                    delete animation.speed;
-                    if (animation.frames.frame instanceof Array) {
-                        animation.frames = animation.frames.frame;
-                    }
-                    else {
-                        animation.frames = [
-                            animation.frames.frame
-                        ];
-                    }
-                    for (var i = 0; i < animation.frames.length; ++i) {
-                        animation.frames[i] = animation.frames[i].layers.layer;
-                        delete animation.frames[i].number;
-                    }
-                    this.animations[name] = animation;
-                }, this);
+          }],
+          msPerFrame: 1000
+        }
+      },
+      currentAnimation: 'idle-down',
+      currentFrame: 0,
+      lastUpdateTime: 0,
+      src: '',
+      get height() {
+        return this.animations[this.currentAnimation].frames[this.currentFrame].rect.height;
+      },
+      get offsetX() {
+        return this.animations[this.currentAnimation].frames[this.currentFrame].offset.x;
+      },
+      get offsetY() {
+        return this.animations[this.currentAnimation].frames[this.currentFrame].offset.y;
+      },
+      get width() {
+        return this.animations[this.currentAnimation].frames[this.currentFrame].rect.width;
+      },
+      get imageX() {
+        return -this.animations[this.currentAnimation].frames[this.currentFrame].rect.x;
+      },
+      get imageY() {
+        return -this.animations[this.currentAnimation].frames[this.currentFrame].rect.y;
+      },
+      currentAnimationChanged: function() {
+        this.currentFrame = 0;
+      },
+      onSpriteMetadataLoaded: function(event, response) {
+        response.response.spriteBuddy.animations.animation.forEach(function (animation) {
+          var name = animation.name;
+          delete animation.name;
+          delete animation.number;
+          animation.msPerFrame = animation.speed;
+          delete animation.speed;
+          if (animation.frames.frame instanceof Array) {
+            animation.frames = animation.frames.frame;
+          }
+          else {
+            animation.frames = [
+              animation.frames.frame
+            ];
+          }
+          for (var i = 0; i < animation.frames.length; ++i) {
+            animation.frames[i] = animation.frames[i].layers.layer;
+            delete animation.frames[i].number;
+          }
+          this.animations[name] = animation;
+        }, this);
 
-                Object.getNotifier(this).notify({
-                    type: "updated"
-                });
-            },
-            prerender: function(currentTime) {
-                var delta = currentTime - this.lastUpdateTime;
-                if (delta > this.animations[this.currentAnimation].msPerFrame) {
-                    this.lastUpdateTime = currentTime;
-
-                    this.currentFrame = (this.currentFrame + 1) % this.animations[this.currentAnimation].frames.length;
-                }
-            }
+        Object.getNotifier(this).notify({
+          type: "updated"
         });
-    </script>
+      },
+      prerender: function(currentTime) {
+        var delta = currentTime - this.lastUpdateTime;
+        if (delta > this.animations[this.currentAnimation].msPerFrame) {
+          this.lastUpdateTime = currentTime;
+
+          this.currentFrame = (this.currentFrame + 1) % this.animations[this.currentAnimation].frames.length;
+        }
+      }
+    });
+  </script>
 </polymer-element>

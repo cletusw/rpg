@@ -4,121 +4,124 @@
 <link rel="import" href="../rpg-sprite-ai/rpg-sprite-ai.html">
 
 <polymer-element name="rpg-game" attributes="height width">
-    <template>
-        <style>
-            @host {
-                :scope {
-                    display: block;
-                }
-            }
+  <template>
+    <style>
+      @host {
+        :scope {
+          display: block;
+        }
+      }
 
-            .wrapper {
-                height: 100%;
-                overflow: hidden;
-                position: relative;
-                width: 100%;
-            }
+      .wrapper {
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+      }
 
-            .wrapper > * {
-                left: 0;
-                position: absolute;
-                top: 0;
+      .wrapper > * {
+        left: 0;
+        position: absolute;
+        top: 0;
+      }
+    </style>
+    <div class="wrapper">
+      <img src="img/example-bg.png" style="-webkit-transform: translateX({{x}}px) translateY({{y}}px)">
+      <rpg-scene id="scene" style="-webkit-transform: translateX({{x}}px) translateY({{y}}px)">
+        <rpg-collidable height="64" width="128" x="288" y="350"></rpg-collidable>
+        <rpg-animated-sprite id="sprite-0" height="30" maxSpeed="2" src="img/Riku.png" width="30" x="100" y="100" ai="wandering" on-collision="onWanderingCollision"></rpg-animated-sprite>
+        <rpg-animated-sprite id="player-avatar" height="30" maxSpeed="3" src="img/Riku.png" width="30" x="{{playerX}}" y="{{playerY}}"></rpg-animated-sprite>
+      </rpg-scene>
+      <img src="img/example-fg.png" style="-webkit-transform: translateX({{x}}px) translateY({{y}}px)">
+    </div>
+  </template>
+  <script>
+    Polymer('rpg-game', {
+      height: 0,
+      playerX: 200,
+      playerY: 200,
+      sceneHeight: 640,
+      sceneWidth: 640,
+      width: 0,
+      get x() {
+        return Math.max(this.width - this.sceneWidth, Math.min(0, this.width / 2 - this.playerX));
+      },
+      get y() {
+        return Math.max(this.height - this.sceneHeight, Math.min(0, this.height / 2 - this.playerY));
+      },
+      heightChanged: function() {
+        this.style.height = this.height + 'px';
+      },
+      widthChanged: function() {
+        this.style.width = this.width + 'px';
+      },
+      onKeydown: function (event) {
+        var playerAvatar = this.$['player-avatar'];
+        switch (event.keyCode) {
+          case 37:
+          case 65:
+            playerAvatar.leftStart();
+            break;
+          case 39:
+          case 68:
+            playerAvatar.rightStart();
+            break;
+          case 38:
+          case 87:
+            playerAvatar.upStart();
+            break;
+          case 40:
+          case 83:
+            playerAvatar.downStart();
+            break;
+          default:
+            console.log(event.keyCode);
+        }
+      },
+      onKeyup: function (event) {
+        var playerAvatar = this.$['player-avatar'];
+        switch (event.keyCode) {
+          case 37:
+          case 65:
+            playerAvatar.leftStop();
+            break;
+          case 39:
+          case 68:
+            playerAvatar.rightStop();
+            break;
+          case 38:
+          case 87:
+            playerAvatar.upStop();
+            break;
+          case 40:
+          case 83:
+            playerAvatar.downStop();
+            break;
+          default:
+            console.log(event.keyCode);
+        }
+      },
+      onWanderingCollision: function(event) {
+        console.log(event.target);
+      },
+      prerender: function(currentTime) {
+        this.$.scene.prerender(currentTime);
+        this.$['player-avatar'].prerender(currentTime);
+        this.$['sprite-0'].prerender(currentTime);
+      },
+      ready: function() {
+        var wanderers = this.shadowRoot.querySelectorAll('[ai=wandering]').array();
+        setInterval(function() {
+          wanderers.forEach(function(sprite) {
+            if (sprite.velocityX) {
+              sprite.rightStop();
             }
-        </style>
-        <div class="wrapper">
-            <img src="img/example-bg.png" style="-webkit-transform: translateX({{x}}px) translateY({{y}}px)">
-            <rpg-scene id="scene" style="-webkit-transform: translateX({{x}}px) translateY({{y}}px)">
-                <rpg-collidable height="64" width="128" x="288" y="350"></rpg-collidable>
-                <rpg-animated-sprite id="sprite-0" height="30" maxSpeed="2" src="img/Riku.png" width="30" x="100" y="100" ai="wandering"></rpg-animated-sprite>
-                <rpg-animated-sprite id="player-avatar" height="30" maxSpeed="3" src="img/Riku.png" width="30" x="{{playerX}}" y="{{playerY}}"></rpg-animated-sprite>
-            </rpg-scene>
-            <img src="img/example-fg.png" style="-webkit-transform: translateX({{x}}px) translateY({{y}}px)">
-        </div>
-    </template>
-    <script>
-        Polymer('rpg-game', {
-            height: 0,
-            playerX: 200,
-            playerY: 200,
-            sceneHeight: 640,
-            sceneWidth: 640,
-            width: 0,
-            get x() {
-                return Math.max(this.width - this.sceneWidth, Math.min(0, this.width / 2 - this.playerX));
-            },
-            get y() {
-                return Math.max(this.height - this.sceneHeight, Math.min(0, this.height / 2 - this.playerY));
-            },
-            heightChanged: function() {
-                this.style.height = this.height + 'px';
-            },
-            widthChanged: function() {
-                this.style.width = this.width + 'px';
-            },
-            onKeydown: function (event) {
-                var playerAvatar = this.$['player-avatar'];
-                switch (event.keyCode) {
-                    case 37:
-                    case 65:
-                        playerAvatar.leftStart();
-                        break;
-                    case 39:
-                    case 68:
-                        playerAvatar.rightStart();
-                        break;
-                    case 38:
-                    case 87:
-                        playerAvatar.upStart();
-                        break;
-                    case 40:
-                    case 83:
-                        playerAvatar.downStart();
-                        break;
-                    default:
-                        console.log(event.keyCode);
-                }
-            },
-            onKeyup: function (event) {
-                var playerAvatar = this.$['player-avatar'];
-                switch (event.keyCode) {
-                    case 37:
-                    case 65:
-                        playerAvatar.leftStop();
-                        break;
-                    case 39:
-                    case 68:
-                        playerAvatar.rightStop();
-                        break;
-                    case 38:
-                    case 87:
-                        playerAvatar.upStop();
-                        break;
-                    case 40:
-                    case 83:
-                        playerAvatar.downStop();
-                        break;
-                    default:
-                        console.log(event.keyCode);
-                }
-            },
-            prerender: function(currentTime) {
-                this.$.scene.prerender(currentTime);
-                this.$['player-avatar'].prerender(currentTime);
-                this.$['sprite-0'].prerender(currentTime);
-            },
-            ready: function() {
-                var wanderers = this.shadowRoot.querySelectorAll('[ai=wandering]').array();
-                setInterval(function() {
-                    wanderers.forEach(function(sprite) {
-                        if (sprite.velocityX) {
-                            sprite.rightStop();
-                        }
-                        else {
-                            sprite.rightStart();
-                        }
-                    });
-                }, 5000);
+            else {
+              sprite.rightStart();
             }
-        });
-    </script>
+          });
+        }, 500);
+      }
+    });
+  </script>
 </polymer-element>

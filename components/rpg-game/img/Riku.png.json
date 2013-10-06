@@ -1,1506 +1,1506 @@
 {
-    "spriteBuddy": {
-        "transparentColour": 0,
-        "version": "2.1.7",
-        "animations": {
-            "animation": [{
-                "speed": 66.67,
-                "name": "walk-rightdown",
-                "frames": {
-                    "frame": [{
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 1,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 53,
-                                    "x": 152,
-                                    "y": 7,
-                                    "width": 24
-                                },
-                                "offset": {
-                                    "y": -29,
-                                    "x": 3
-                                },
-                                "number": 1
-                            }
-                        }
-                    }, {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 2,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 55,
-                                    "x": 180,
-                                    "y": 5,
-                                    "width": 29
-                                },
-                                "offset": {
-                                    "y": -28,
-                                    "x": 1
-                                },
-                                "number": 1
-                            }
-                        }
-                    }, {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 3,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 55,
-                                    "x": 213,
-                                    "y": 5,
-                                    "width": 32
-                                },
-                                "offset": {
-                                    "y": -27,
-                                    "x": 0
-                                },
-                                "number": 1
-                            }
-                        }
-                    }, {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 4,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 57,
-                                    "x": 250,
-                                    "y": 3,
-                                    "width": 29
-                                },
-                                "offset": {
-                                    "y": -28,
-                                    "x": 1
-                                },
-                                "number": 1
-                            }
-                        }
-                    }, {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 5,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 56,
-                                    "x": 282,
-                                    "y": 4,
-                                    "width": 25
-                                },
-                                "offset": {
-                                    "y": -29,
-                                    "x": 3
-                                },
-                                "number": 1
-                            }
-                        }
-                    }, {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 6,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 54,
-                                    "x": 313,
-                                    "y": 6,
-                                    "width": 24
-                                },
-                                "offset": {
-                                    "y": -28,
-                                    "x": 5
-                                },
-                                "number": 1
-                            }
-                        }
-                    }, {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 7,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 52,
-                                    "x": 342,
-                                    "y": 8,
-                                    "width": 31
-                                },
-                                "offset": {
-                                    "y": -27,
-                                    "x": 2
-                                },
-                                "number": 1
-                            }
-                        }
-                    }, {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 8,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 54,
-                                    "x": 375,
-                                    "y": 6,
-                                    "width": 30
-                                },
-                                "offset": {
-                                    "y": -28,
-                                    "x": -1
-                                },
-                                "number": 1
-                            }
-                        }
-                    }]
+  "spriteBuddy": {
+    "transparentColour": 0,
+    "version": "2.1.7",
+    "animations": {
+      "animation": [{
+        "speed": 66.67,
+        "name": "walk-rightdown",
+        "frames": {
+          "frame": [{
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 1,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 53,
+                  "x": 152,
+                  "y": 7,
+                  "width": 24
                 },
-                "loop": true,
+                "offset": {
+                  "y": -29,
+                  "x": 3
+                },
                 "number": 1
-            }, {
-                "speed": 66.67,
-                "name": "idle-leftdown",
-                "frames": {
-                    "frame": {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 1,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 57,
-                                    "x": 1,
-                                    "y": 3,
-                                    "width": 29
-                                },
-                                "offset": {
-                                    "y": -28,
-                                    "x": 0
-                                },
-                                "number": 1
-                            }
-                        }
-                    }
+              }
+            }
+          }, {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 2,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 55,
+                  "x": 180,
+                  "y": 5,
+                  "width": 29
                 },
-                "loop": true,
-                "number": 2
-            }, {
-                "speed": 66.67,
-                "name": "idle-down",
-                "frames": {
-                    "frame": {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 1,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 55,
-                                    "x": 33,
-                                    "y": 5,
-                                    "width": 29
-                                },
-                                "offset": {
-                                    "y": -27,
-                                    "x": 1
-                                },
-                                "number": 1
-                            }
-                        }
-                    }
+                "offset": {
+                  "y": -28,
+                  "x": 1
                 },
-                "loop": true,
-                "number": 3
-            }, {
-                "speed": 66.67,
-                "name": "idle-up",
-                "frames": {
-                    "frame": {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 1,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 53,
-                                    "x": 65,
-                                    "y": 7,
-                                    "width": 29
-                                },
-                                "offset": {
-                                    "y": -26,
-                                    "x": 1
-                                },
-                                "number": 1
-                            }
-                        }
-                    }
+                "number": 1
+              }
+            }
+          }, {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 3,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 55,
+                  "x": 213,
+                  "y": 5,
+                  "width": 32
                 },
-                "loop": true,
-                "number": 4
-            }, {
-                "speed": 66.67,
-                "name": "idle-rightup",
-                "frames": {
-                    "frame": {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 1,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 55,
-                                    "x": 99,
-                                    "y": 5,
-                                    "width": 25
-                                },
-                                "offset": {
-                                    "y": -27,
-                                    "x": 3
-                                },
-                                "number": 1
-                            }
-                        }
-                    }
+                "offset": {
+                  "y": -27,
+                  "x": 0
                 },
-                "loop": true,
-                "number": 5
-            }, {
-                "speed": 66.67,
-                "name": "idle-right",
-                "frames": {
-                    "frame": {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 1,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 56,
-                                    "x": 125,
-                                    "y": 4,
-                                    "width": 19
-                                },
-                                "offset": {
-                                    "y": -28,
-                                    "x": 6
-                                },
-                                "number": 1
-                            }
-                        }
-                    }
+                "number": 1
+              }
+            }
+          }, {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 4,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 57,
+                  "x": 250,
+                  "y": 3,
+                  "width": 29
                 },
-                "loop": true,
-                "number": 6
-            }, {
-                "speed": 66.67,
-                "name": "walk-leftup",
-                "frames": {
-                    "frame": [{
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 1,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 54,
-                                    "x": 412,
-                                    "y": 6,
-                                    "width": 21
-                                },
-                                "offset": {
-                                    "y": -28,
-                                    "x": 4
-                                },
-                                "number": 1
-                            }
-                        }
-                    }, {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 2,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 51,
-                                    "x": 437,
-                                    "y": 9,
-                                    "width": 27
-                                },
-                                "offset": {
-                                    "y": -27,
-                                    "x": 1
-                                },
-                                "number": 1
-                            }
-                        }
-                    }, {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 3,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 52,
-                                    "x": 468,
-                                    "y": 8,
-                                    "width": 36
-                                },
-                                "offset": {
-                                    "y": -26,
-                                    "x": -3
-                                },
-                                "number": 1
-                            }
-                        }
-                    }, {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 4,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 53,
-                                    "x": 508,
-                                    "y": 7,
-                                    "width": 32
-                                },
-                                "offset": {
-                                    "y": -27,
-                                    "x": 0
-                                },
-                                "number": 1
-                            }
-                        }
-                    }, {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 5,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 55,
-                                    "x": 545,
-                                    "y": 5,
-                                    "width": 23
-                                },
-                                "offset": {
-                                    "y": -28,
-                                    "x": 5
-                                },
-                                "number": 1
-                            }
-                        }
-                    }, {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 6,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 55,
-                                    "x": 572,
-                                    "y": 5,
-                                    "width": 25
-                                },
-                                "offset": {
-                                    "y": -27,
-                                    "x": 3
-                                },
-                                "number": 1
-                            }
-                        }
-                    }, {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 7,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 55,
-                                    "x": 602,
-                                    "y": 5,
-                                    "width": 30
-                                },
-                                "offset": {
-                                    "y": -26,
-                                    "x": 0
-                                },
-                                "number": 1
-                            }
-                        }
-                    }, {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 8,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 57,
-                                    "x": 636,
-                                    "y": 3,
-                                    "width": 25
-                                },
-                                "offset": {
-                                    "y": -27,
-                                    "x": 3
-                                },
-                                "number": 1
-                            }
-                        }
-                    }]
+                "offset": {
+                  "y": -28,
+                  "x": 1
                 },
-                "loop": true,
-                "number": 7
-            }, {
-                "speed": 66.67,
-                "name": "walk-down",
-                "frames": {
-                    "frame": [{
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 1,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 47,
-                                    "x": 667,
-                                    "y": 13,
-                                    "width": 27
-                                },
-                                "offset": {
-                                    "y": -23,
-                                    "x": 1
-                                },
-                                "number": 1
-                            }
-                        }
-                    }, {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 2,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 44,
-                                    "x": 699,
-                                    "y": 16,
-                                    "width": 26
-                                },
-                                "offset": {
-                                    "y": -22,
-                                    "x": 4
-                                },
-                                "number": 1
-                            }
-                        }
-                    }, {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 3,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 51,
-                                    "x": 730,
-                                    "y": 9,
-                                    "width": 28
-                                },
-                                "offset": {
-                                    "y": -25,
-                                    "x": 4
-                                },
-                                "number": 1
-                            }
-                        }
-                    }, {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 4,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 53,
-                                    "x": 764,
-                                    "y": 7,
-                                    "width": 26
-                                },
-                                "offset": {
-                                    "y": -25,
-                                    "x": 5
-                                },
-                                "number": 1
-                            }
-                        }
-                    }, {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 5,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 47,
-                                    "x": 796,
-                                    "y": 13,
-                                    "width": 27
-                                },
-                                "offset": {
-                                    "y": -23,
-                                    "x": 3
-                                },
-                                "number": 1
-                            }
-                        }
-                    }, {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 6,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 44,
-                                    "x": 829,
-                                    "y": 16,
-                                    "width": 26
-                                },
-                                "offset": {
-                                    "y": -22,
-                                    "x": 1
-                                },
-                                "number": 1
-                            }
-                        }
-                    }, {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 7,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 51,
-                                    "x": 861,
-                                    "y": 9,
-                                    "width": 28
-                                },
-                                "offset": {
-                                    "y": -25,
-                                    "x": -1
-                                },
-                                "number": 1
-                            }
-                        }
-                    }, {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 8,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 53,
-                                    "x": 895,
-                                    "y": 7,
-                                    "width": 26
-                                },
-                                "offset": {
-                                    "y": -25,
-                                    "x": 0
-                                },
-                                "number": 1
-                            }
-                        }
-                    }]
+                "number": 1
+              }
+            }
+          }, {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 5,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 56,
+                  "x": 282,
+                  "y": 4,
+                  "width": 25
                 },
-                "loop": true,
-                "number": 8
-            }, {
-                "speed": 66.67,
-                "name": "walk-up",
-                "frames": {
-                    "frame": [{
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 1,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 53,
-                                    "x": 1,
-                                    "y": 74,
-                                    "width": 25
-                                },
-                                "offset": {
-                                    "y": -25,
-                                    "x": 3
-                                },
-                                "number": 1
-                            }
-                        }
-                    }, {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 2,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 48,
-                                    "x": 33,
-                                    "y": 79,
-                                    "width": 24
-                                },
-                                "offset": {
-                                    "y": -24,
-                                    "x": 3
-                                },
-                                "number": 1
-                            }
-                        }
-                    }, {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 3,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 52,
-                                    "x": 63,
-                                    "y": 75,
-                                    "width": 26
-                                },
-                                "offset": {
-                                    "y": -26,
-                                    "x": 2
-                                },
-                                "number": 1
-                            }
-                        }
-                    }, {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 4,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 59,
-                                    "x": 96,
-                                    "y": 68,
-                                    "width": 24
-                                },
-                                "offset": {
-                                    "y": -27,
-                                    "x": 4
-                                },
-                                "number": 1
-                            }
-                        }
-                    }, {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 5,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 53,
-                                    "x": 126,
-                                    "y": 74,
-                                    "width": 25
-                                },
-                                "offset": {
-                                    "y": -25,
-                                    "x": 4
-                                },
-                                "number": 1
-                            }
-                        }
-                    }, {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 6,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 48,
-                                    "x": 157,
-                                    "y": 79,
-                                    "width": 24
-                                },
-                                "offset": {
-                                    "y": -24,
-                                    "x": 5
-                                },
-                                "number": 1
-                            }
-                        }
-                    }, {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 7,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 52,
-                                    "x": 186,
-                                    "y": 75,
-                                    "width": 26
-                                },
-                                "offset": {
-                                    "y": -26,
-                                    "x": 4
-                                },
-                                "number": 1
-                            }
-                        }
-                    }, {
-                        "durationAsPercentage": 100,
-                        "duration": 100,
-                        "number": 8,
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "height": 59,
-                                    "x": 216,
-                                    "y": 68,
-                                    "width": 24
-                                },
-                                "offset": {
-                                    "y": -27,
-                                    "x": 4
-                                },
-                                "number": 1
-                            }
-                        }
-                    }]
+                "offset": {
+                  "y": -29,
+                  "x": 3
                 },
-                "loop": true,
-                "number": 9
-            }, {
-                "loop": true,
-                "frames": {
-                    "frame": [{
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 247,
-                                    "height": 57,
-                                    "width": 25,
-                                    "y": 70
-                                },
-                                "offset": {
-                                    "x": 2,
-                                    "y": -27
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 1,
-                        "duration": 66.67
-                    }, {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 276,
-                                    "height": 55,
-                                    "width": 30,
-                                    "y": 72
-                                },
-                                "offset": {
-                                    "x": 0,
-                                    "y": -26
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 2,
-                        "duration": 66.67
-                    }, {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 311,
-                                    "height": 55,
-                                    "width": 25,
-                                    "y": 72
-                                },
-                                "offset": {
-                                    "x": 2,
-                                    "y": -27
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 3,
-                        "duration": 66.67
-                    }, {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 340,
-                                    "height": 55,
-                                    "width": 23,
-                                    "y": 72
-                                },
-                                "offset": {
-                                    "x": 2,
-                                    "y": -28
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 4,
-                        "duration": 66.67
-                    }, {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 368,
-                                    "height": 53,
-                                    "width": 32,
-                                    "y": 74
-                                },
-                                "offset": {
-                                    "x": -2,
-                                    "y": -27
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 5,
-                        "duration": 66.67
-                    }, {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 404,
-                                    "height": 52,
-                                    "width": 36,
-                                    "y": 75
-                                },
-                                "offset": {
-                                    "x": -3,
-                                    "y": -26
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 6,
-                        "duration": 66.67
-                    }, {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 444,
-                                    "height": 51,
-                                    "width": 27,
-                                    "y": 76
-                                },
-                                "offset": {
-                                    "x": 2,
-                                    "y": -27
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 7,
-                        "duration": 66.67
-                    }, {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 475,
-                                    "height": 54,
-                                    "width": 21,
-                                    "y": 73
-                                },
-                                "offset": {
-                                    "x": 5,
-                                    "y": -28
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 8,
-                        "duration": 66.67
-                    }]
+                "number": 1
+              }
+            }
+          }, {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 6,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 54,
+                  "x": 313,
+                  "y": 6,
+                  "width": 24
                 },
-                "speed": 66.67,
-                "number": 10,
-                "name": "walk-rightup"
-            }, {
-                "loop": true,
-                "frames": {
-                    "frame": [{
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 503,
-                                    "height": 54,
-                                    "width": 30,
-                                    "y": 73
-                                },
-                                "offset": {
-                                    "x": 1,
-                                    "y": -28
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 1,
-                        "duration": 66.67
-                    }, {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 535,
-                                    "height": 52,
-                                    "width": 31,
-                                    "y": 75
-                                },
-                                "offset": {
-                                    "x": -3,
-                                    "y": -27
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 2,
-                        "duration": 66.67
-                    }, {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 571,
-                                    "height": 54,
-                                    "width": 24,
-                                    "y": 73
-                                },
-                                "offset": {
-                                    "x": 1,
-                                    "y": -28
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 3,
-                        "duration": 66.67
-                    }, {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 601,
-                                    "height": 56,
-                                    "width": 25,
-                                    "y": 71
-                                },
-                                "offset": {
-                                    "x": 2,
-                                    "y": -29
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 4,
-                        "duration": 66.67
-                    }, {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 629,
-                                    "height": 57,
-                                    "width": 29,
-                                    "y": 70
-                                },
-                                "offset": {
-                                    "x": 0,
-                                    "y": -28
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 5,
-                        "duration": 66.67
-                    }, {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 663,
-                                    "height": 55,
-                                    "width": 32,
-                                    "y": 72
-                                },
-                                "offset": {
-                                    "x": -2,
-                                    "y": -27
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 6,
-                        "duration": 66.67
-                    }, {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 699,
-                                    "height": 55,
-                                    "width": 29,
-                                    "y": 72
-                                },
-                                "offset": {
-                                    "x": 0,
-                                    "y": -28
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 7,
-                        "duration": 66.67
-                    }, {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 732,
-                                    "height": 53,
-                                    "width": 24,
-                                    "y": 74
-                                },
-                                "offset": {
-                                    "x": 3,
-                                    "y": -29
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 8,
-                        "duration": 66.67
-                    }]
+                "offset": {
+                  "y": -28,
+                  "x": 5
                 },
-                "speed": 66.67,
-                "number": 11,
-                "name": "walk-leftdown"
-            }, {
-                "loop": false,
-                "frames": {
-                    "frame": {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 764,
-                                    "height": 56,
-                                    "width": 19,
-                                    "y": 71
-                                },
-                                "offset": {
-                                    "x": 6,
-                                    "y": -28
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 1,
-                        "duration": 66.67
-                    }
+                "number": 1
+              }
+            }
+          }, {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 7,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 52,
+                  "x": 342,
+                  "y": 8,
+                  "width": 31
                 },
-                "speed": 66.67,
-                "number": 12,
-                "name": "idle-left"
-            }, {
-                "loop": false,
-                "frames": {
-                    "frame": {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 784,
-                                    "height": 55,
-                                    "width": 25,
-                                    "y": 72
-                                },
-                                "offset": {
-                                    "x": 3,
-                                    "y": -27
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 1,
-                        "duration": 66.67
-                    }
+                "offset": {
+                  "y": -27,
+                  "x": 2
                 },
-                "speed": 66.67,
-                "number": 13,
-                "name": "idle-leftup"
-            }, {
-                "loop": false,
-                "frames": {
-                    "frame": {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 812,
-                                    "height": 57,
-                                    "width": 29,
-                                    "y": 72
-                                },
-                                "offset": {
-                                    "x": 1,
-                                    "y": -28
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 1,
-                        "duration": 66.67
-                    }
+                "number": 1
+              }
+            }
+          }, {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 8,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 54,
+                  "x": 375,
+                  "y": 6,
+                  "width": 30
                 },
-                "speed": 66.67,
-                "number": 14,
-                "name": "idle-rightdown"
-            }, {
-                "loop": true,
-                "frames": {
-                    "frame": [{
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 1,
-                                    "height": 43,
-                                    "width": 39,
-                                    "y": 142
-                                },
-                                "offset": {
-                                    "x": -3,
-                                    "y": -21
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 1,
-                        "duration": 66.67
-                    }, {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 43,
-                                    "height": 45,
-                                    "width": 47,
-                                    "y": 140
-                                },
-                                "offset": {
-                                    "x": -6,
-                                    "y": -22
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 2,
-                        "duration": 66.67
-                    }, {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 94,
-                                    "height": 45,
-                                    "width": 58,
-                                    "y": 140
-                                },
-                                "offset": {
-                                    "x": -13,
-                                    "y": -23
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 3,
-                        "duration": 66.67
-                    }, {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 158,
-                                    "height": 51,
-                                    "width": 56,
-                                    "y": 134
-                                },
-                                "offset": {
-                                    "x": -13,
-                                    "y": -23
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 4,
-                        "duration": 66.67
-                    }, {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 219,
-                                    "height": 47,
-                                    "width": 39,
-                                    "y": 138
-                                },
-                                "offset": {
-                                    "x": -3,
-                                    "y": -21
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 5,
-                        "duration": 66.67
-                    }, {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 261,
-                                    "height": 47,
-                                    "width": 42,
-                                    "y": 138
-                                },
-                                "offset": {
-                                    "x": -6,
-                                    "y": -22
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 6,
-                        "duration": 66.67
-                    }, {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 307,
-                                    "height": 41,
-                                    "width": 54,
-                                    "y": 144
-                                },
-                                "offset": {
-                                    "x": -12,
-                                    "y": -23
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 7,
-                        "duration": 66.67
-                    }, {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 365,
-                                    "height": 46,
-                                    "width": 53,
-                                    "y": 139
-                                },
-                                "offset": {
-                                    "x": -11,
-                                    "y": -23
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 8,
-                        "duration": 66.67
-                    }]
+                "offset": {
+                  "y": -28,
+                  "x": -1
                 },
-                "speed": 66.67,
-                "number": 15,
-                "name": "walk-right"
-            }, {
-                "loop": false,
-                "frames": {
-                    "frame": [{
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 423,
-                                    "height": 46,
-                                    "width": 53,
-                                    "y": 139
-                                },
-                                "offset": {
-                                    "x": -12,
-                                    "y": -23
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 1,
-                        "duration": 66.67
-                    }, {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 480,
-                                    "height": 41,
-                                    "width": 54,
-                                    "y": 144
-                                },
-                                "offset": {
-                                    "x": -12,
-                                    "y": -23
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 2,
-                        "duration": 66.67
-                    }, {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 538,
-                                    "height": 47,
-                                    "width": 42,
-                                    "y": 138
-                                },
-                                "offset": {
-                                    "x": -6,
-                                    "y": -22
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 3,
-                        "duration": 66.67
-                    }, {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 583,
-                                    "height": 47,
-                                    "width": 39,
-                                    "y": 138
-                                },
-                                "offset": {
-                                    "x": -6,
-                                    "y": -21
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 4,
-                        "duration": 66.67
-                    }, {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 627,
-                                    "height": 51,
-                                    "width": 56,
-                                    "y": 134
-                                },
-                                "offset": {
-                                    "x": -13,
-                                    "y": -23
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 5,
-                        "duration": 66.67
-                    }, {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 689,
-                                    "height": 45,
-                                    "width": 58,
-                                    "y": 140
-                                },
-                                "offset": {
-                                    "x": -15,
-                                    "y": -23
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 6,
-                        "duration": 66.67
-                    }, {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 751,
-                                    "height": 45,
-                                    "width": 47,
-                                    "y": 140
-                                },
-                                "offset": {
-                                    "x": -11,
-                                    "y": -22
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 7,
-                        "duration": 66.67
-                    }, {
-                        "layers": {
-                            "layer": {
-                                "rect": {
-                                    "x": 801,
-                                    "height": 43,
-                                    "width": 39,
-                                    "y": 142
-                                },
-                                "offset": {
-                                    "x": -6,
-                                    "y": -21
-                                },
-                                "number": 1
-                            }
-                        },
-                        "durationAsPercentage": 100,
-                        "number": 8,
-                        "duration": 66.67
-                    }]
-                },
-                "speed": 66.67,
-                "number": 16,
-                "name": "walk-left"
-            }]
+                "number": 1
+              }
+            }
+          }]
         },
-        "spritesheetSource": "Riku.png"
-    }
+        "loop": true,
+        "number": 1
+      }, {
+        "speed": 66.67,
+        "name": "idle-leftdown",
+        "frames": {
+          "frame": {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 1,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 57,
+                  "x": 1,
+                  "y": 3,
+                  "width": 29
+                },
+                "offset": {
+                  "y": -28,
+                  "x": 0
+                },
+                "number": 1
+              }
+            }
+          }
+        },
+        "loop": true,
+        "number": 2
+      }, {
+        "speed": 66.67,
+        "name": "idle-down",
+        "frames": {
+          "frame": {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 1,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 55,
+                  "x": 33,
+                  "y": 5,
+                  "width": 29
+                },
+                "offset": {
+                  "y": -27,
+                  "x": 1
+                },
+                "number": 1
+              }
+            }
+          }
+        },
+        "loop": true,
+        "number": 3
+      }, {
+        "speed": 66.67,
+        "name": "idle-up",
+        "frames": {
+          "frame": {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 1,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 53,
+                  "x": 65,
+                  "y": 7,
+                  "width": 29
+                },
+                "offset": {
+                  "y": -26,
+                  "x": 1
+                },
+                "number": 1
+              }
+            }
+          }
+        },
+        "loop": true,
+        "number": 4
+      }, {
+        "speed": 66.67,
+        "name": "idle-rightup",
+        "frames": {
+          "frame": {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 1,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 55,
+                  "x": 99,
+                  "y": 5,
+                  "width": 25
+                },
+                "offset": {
+                  "y": -27,
+                  "x": 3
+                },
+                "number": 1
+              }
+            }
+          }
+        },
+        "loop": true,
+        "number": 5
+      }, {
+        "speed": 66.67,
+        "name": "idle-right",
+        "frames": {
+          "frame": {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 1,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 56,
+                  "x": 125,
+                  "y": 4,
+                  "width": 19
+                },
+                "offset": {
+                  "y": -28,
+                  "x": 6
+                },
+                "number": 1
+              }
+            }
+          }
+        },
+        "loop": true,
+        "number": 6
+      }, {
+        "speed": 66.67,
+        "name": "walk-leftup",
+        "frames": {
+          "frame": [{
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 1,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 54,
+                  "x": 412,
+                  "y": 6,
+                  "width": 21
+                },
+                "offset": {
+                  "y": -28,
+                  "x": 4
+                },
+                "number": 1
+              }
+            }
+          }, {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 2,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 51,
+                  "x": 437,
+                  "y": 9,
+                  "width": 27
+                },
+                "offset": {
+                  "y": -27,
+                  "x": 1
+                },
+                "number": 1
+              }
+            }
+          }, {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 3,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 52,
+                  "x": 468,
+                  "y": 8,
+                  "width": 36
+                },
+                "offset": {
+                  "y": -26,
+                  "x": -3
+                },
+                "number": 1
+              }
+            }
+          }, {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 4,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 53,
+                  "x": 508,
+                  "y": 7,
+                  "width": 32
+                },
+                "offset": {
+                  "y": -27,
+                  "x": 0
+                },
+                "number": 1
+              }
+            }
+          }, {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 5,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 55,
+                  "x": 545,
+                  "y": 5,
+                  "width": 23
+                },
+                "offset": {
+                  "y": -28,
+                  "x": 5
+                },
+                "number": 1
+              }
+            }
+          }, {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 6,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 55,
+                  "x": 572,
+                  "y": 5,
+                  "width": 25
+                },
+                "offset": {
+                  "y": -27,
+                  "x": 3
+                },
+                "number": 1
+              }
+            }
+          }, {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 7,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 55,
+                  "x": 602,
+                  "y": 5,
+                  "width": 30
+                },
+                "offset": {
+                  "y": -26,
+                  "x": 0
+                },
+                "number": 1
+              }
+            }
+          }, {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 8,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 57,
+                  "x": 636,
+                  "y": 3,
+                  "width": 25
+                },
+                "offset": {
+                  "y": -27,
+                  "x": 3
+                },
+                "number": 1
+              }
+            }
+          }]
+        },
+        "loop": true,
+        "number": 7
+      }, {
+        "speed": 66.67,
+        "name": "walk-down",
+        "frames": {
+          "frame": [{
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 1,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 47,
+                  "x": 667,
+                  "y": 13,
+                  "width": 27
+                },
+                "offset": {
+                  "y": -23,
+                  "x": 1
+                },
+                "number": 1
+              }
+            }
+          }, {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 2,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 44,
+                  "x": 699,
+                  "y": 16,
+                  "width": 26
+                },
+                "offset": {
+                  "y": -22,
+                  "x": 4
+                },
+                "number": 1
+              }
+            }
+          }, {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 3,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 51,
+                  "x": 730,
+                  "y": 9,
+                  "width": 28
+                },
+                "offset": {
+                  "y": -25,
+                  "x": 4
+                },
+                "number": 1
+              }
+            }
+          }, {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 4,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 53,
+                  "x": 764,
+                  "y": 7,
+                  "width": 26
+                },
+                "offset": {
+                  "y": -25,
+                  "x": 5
+                },
+                "number": 1
+              }
+            }
+          }, {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 5,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 47,
+                  "x": 796,
+                  "y": 13,
+                  "width": 27
+                },
+                "offset": {
+                  "y": -23,
+                  "x": 3
+                },
+                "number": 1
+              }
+            }
+          }, {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 6,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 44,
+                  "x": 829,
+                  "y": 16,
+                  "width": 26
+                },
+                "offset": {
+                  "y": -22,
+                  "x": 1
+                },
+                "number": 1
+              }
+            }
+          }, {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 7,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 51,
+                  "x": 861,
+                  "y": 9,
+                  "width": 28
+                },
+                "offset": {
+                  "y": -25,
+                  "x": -1
+                },
+                "number": 1
+              }
+            }
+          }, {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 8,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 53,
+                  "x": 895,
+                  "y": 7,
+                  "width": 26
+                },
+                "offset": {
+                  "y": -25,
+                  "x": 0
+                },
+                "number": 1
+              }
+            }
+          }]
+        },
+        "loop": true,
+        "number": 8
+      }, {
+        "speed": 66.67,
+        "name": "walk-up",
+        "frames": {
+          "frame": [{
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 1,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 53,
+                  "x": 1,
+                  "y": 74,
+                  "width": 25
+                },
+                "offset": {
+                  "y": -25,
+                  "x": 3
+                },
+                "number": 1
+              }
+            }
+          }, {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 2,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 48,
+                  "x": 33,
+                  "y": 79,
+                  "width": 24
+                },
+                "offset": {
+                  "y": -24,
+                  "x": 3
+                },
+                "number": 1
+              }
+            }
+          }, {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 3,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 52,
+                  "x": 63,
+                  "y": 75,
+                  "width": 26
+                },
+                "offset": {
+                  "y": -26,
+                  "x": 2
+                },
+                "number": 1
+              }
+            }
+          }, {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 4,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 59,
+                  "x": 96,
+                  "y": 68,
+                  "width": 24
+                },
+                "offset": {
+                  "y": -27,
+                  "x": 4
+                },
+                "number": 1
+              }
+            }
+          }, {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 5,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 53,
+                  "x": 126,
+                  "y": 74,
+                  "width": 25
+                },
+                "offset": {
+                  "y": -25,
+                  "x": 4
+                },
+                "number": 1
+              }
+            }
+          }, {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 6,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 48,
+                  "x": 157,
+                  "y": 79,
+                  "width": 24
+                },
+                "offset": {
+                  "y": -24,
+                  "x": 5
+                },
+                "number": 1
+              }
+            }
+          }, {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 7,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 52,
+                  "x": 186,
+                  "y": 75,
+                  "width": 26
+                },
+                "offset": {
+                  "y": -26,
+                  "x": 4
+                },
+                "number": 1
+              }
+            }
+          }, {
+            "durationAsPercentage": 100,
+            "duration": 100,
+            "number": 8,
+            "layers": {
+              "layer": {
+                "rect": {
+                  "height": 59,
+                  "x": 216,
+                  "y": 68,
+                  "width": 24
+                },
+                "offset": {
+                  "y": -27,
+                  "x": 4
+                },
+                "number": 1
+              }
+            }
+          }]
+        },
+        "loop": true,
+        "number": 9
+      }, {
+        "loop": true,
+        "frames": {
+          "frame": [{
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 247,
+                  "height": 57,
+                  "width": 25,
+                  "y": 70
+                },
+                "offset": {
+                  "x": 2,
+                  "y": -27
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 1,
+            "duration": 66.67
+          }, {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 276,
+                  "height": 55,
+                  "width": 30,
+                  "y": 72
+                },
+                "offset": {
+                  "x": 0,
+                  "y": -26
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 2,
+            "duration": 66.67
+          }, {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 311,
+                  "height": 55,
+                  "width": 25,
+                  "y": 72
+                },
+                "offset": {
+                  "x": 2,
+                  "y": -27
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 3,
+            "duration": 66.67
+          }, {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 340,
+                  "height": 55,
+                  "width": 23,
+                  "y": 72
+                },
+                "offset": {
+                  "x": 2,
+                  "y": -28
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 4,
+            "duration": 66.67
+          }, {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 368,
+                  "height": 53,
+                  "width": 32,
+                  "y": 74
+                },
+                "offset": {
+                  "x": -2,
+                  "y": -27
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 5,
+            "duration": 66.67
+          }, {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 404,
+                  "height": 52,
+                  "width": 36,
+                  "y": 75
+                },
+                "offset": {
+                  "x": -3,
+                  "y": -26
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 6,
+            "duration": 66.67
+          }, {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 444,
+                  "height": 51,
+                  "width": 27,
+                  "y": 76
+                },
+                "offset": {
+                  "x": 2,
+                  "y": -27
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 7,
+            "duration": 66.67
+          }, {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 475,
+                  "height": 54,
+                  "width": 21,
+                  "y": 73
+                },
+                "offset": {
+                  "x": 5,
+                  "y": -28
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 8,
+            "duration": 66.67
+          }]
+        },
+        "speed": 66.67,
+        "number": 10,
+        "name": "walk-rightup"
+      }, {
+        "loop": true,
+        "frames": {
+          "frame": [{
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 503,
+                  "height": 54,
+                  "width": 30,
+                  "y": 73
+                },
+                "offset": {
+                  "x": 1,
+                  "y": -28
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 1,
+            "duration": 66.67
+          }, {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 535,
+                  "height": 52,
+                  "width": 31,
+                  "y": 75
+                },
+                "offset": {
+                  "x": -3,
+                  "y": -27
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 2,
+            "duration": 66.67
+          }, {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 571,
+                  "height": 54,
+                  "width": 24,
+                  "y": 73
+                },
+                "offset": {
+                  "x": 1,
+                  "y": -28
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 3,
+            "duration": 66.67
+          }, {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 601,
+                  "height": 56,
+                  "width": 25,
+                  "y": 71
+                },
+                "offset": {
+                  "x": 2,
+                  "y": -29
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 4,
+            "duration": 66.67
+          }, {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 629,
+                  "height": 57,
+                  "width": 29,
+                  "y": 70
+                },
+                "offset": {
+                  "x": 0,
+                  "y": -28
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 5,
+            "duration": 66.67
+          }, {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 663,
+                  "height": 55,
+                  "width": 32,
+                  "y": 72
+                },
+                "offset": {
+                  "x": -2,
+                  "y": -27
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 6,
+            "duration": 66.67
+          }, {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 699,
+                  "height": 55,
+                  "width": 29,
+                  "y": 72
+                },
+                "offset": {
+                  "x": 0,
+                  "y": -28
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 7,
+            "duration": 66.67
+          }, {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 732,
+                  "height": 53,
+                  "width": 24,
+                  "y": 74
+                },
+                "offset": {
+                  "x": 3,
+                  "y": -29
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 8,
+            "duration": 66.67
+          }]
+        },
+        "speed": 66.67,
+        "number": 11,
+        "name": "walk-leftdown"
+      }, {
+        "loop": false,
+        "frames": {
+          "frame": {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 764,
+                  "height": 56,
+                  "width": 19,
+                  "y": 71
+                },
+                "offset": {
+                  "x": 6,
+                  "y": -28
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 1,
+            "duration": 66.67
+          }
+        },
+        "speed": 66.67,
+        "number": 12,
+        "name": "idle-left"
+      }, {
+        "loop": false,
+        "frames": {
+          "frame": {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 784,
+                  "height": 55,
+                  "width": 25,
+                  "y": 72
+                },
+                "offset": {
+                  "x": 3,
+                  "y": -27
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 1,
+            "duration": 66.67
+          }
+        },
+        "speed": 66.67,
+        "number": 13,
+        "name": "idle-leftup"
+      }, {
+        "loop": false,
+        "frames": {
+          "frame": {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 812,
+                  "height": 57,
+                  "width": 29,
+                  "y": 72
+                },
+                "offset": {
+                  "x": 1,
+                  "y": -28
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 1,
+            "duration": 66.67
+          }
+        },
+        "speed": 66.67,
+        "number": 14,
+        "name": "idle-rightdown"
+      }, {
+        "loop": true,
+        "frames": {
+          "frame": [{
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 1,
+                  "height": 43,
+                  "width": 39,
+                  "y": 142
+                },
+                "offset": {
+                  "x": -3,
+                  "y": -21
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 1,
+            "duration": 66.67
+          }, {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 43,
+                  "height": 45,
+                  "width": 47,
+                  "y": 140
+                },
+                "offset": {
+                  "x": -6,
+                  "y": -22
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 2,
+            "duration": 66.67
+          }, {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 94,
+                  "height": 45,
+                  "width": 58,
+                  "y": 140
+                },
+                "offset": {
+                  "x": -13,
+                  "y": -23
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 3,
+            "duration": 66.67
+          }, {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 158,
+                  "height": 51,
+                  "width": 56,
+                  "y": 134
+                },
+                "offset": {
+                  "x": -13,
+                  "y": -23
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 4,
+            "duration": 66.67
+          }, {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 219,
+                  "height": 47,
+                  "width": 39,
+                  "y": 138
+                },
+                "offset": {
+                  "x": -3,
+                  "y": -21
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 5,
+            "duration": 66.67
+          }, {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 261,
+                  "height": 47,
+                  "width": 42,
+                  "y": 138
+                },
+                "offset": {
+                  "x": -6,
+                  "y": -22
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 6,
+            "duration": 66.67
+          }, {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 307,
+                  "height": 41,
+                  "width": 54,
+                  "y": 144
+                },
+                "offset": {
+                  "x": -12,
+                  "y": -23
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 7,
+            "duration": 66.67
+          }, {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 365,
+                  "height": 46,
+                  "width": 53,
+                  "y": 139
+                },
+                "offset": {
+                  "x": -11,
+                  "y": -23
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 8,
+            "duration": 66.67
+          }]
+        },
+        "speed": 66.67,
+        "number": 15,
+        "name": "walk-right"
+      }, {
+        "loop": false,
+        "frames": {
+          "frame": [{
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 423,
+                  "height": 46,
+                  "width": 53,
+                  "y": 139
+                },
+                "offset": {
+                  "x": -12,
+                  "y": -23
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 1,
+            "duration": 66.67
+          }, {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 480,
+                  "height": 41,
+                  "width": 54,
+                  "y": 144
+                },
+                "offset": {
+                  "x": -12,
+                  "y": -23
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 2,
+            "duration": 66.67
+          }, {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 538,
+                  "height": 47,
+                  "width": 42,
+                  "y": 138
+                },
+                "offset": {
+                  "x": -6,
+                  "y": -22
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 3,
+            "duration": 66.67
+          }, {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 583,
+                  "height": 47,
+                  "width": 39,
+                  "y": 138
+                },
+                "offset": {
+                  "x": -6,
+                  "y": -21
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 4,
+            "duration": 66.67
+          }, {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 627,
+                  "height": 51,
+                  "width": 56,
+                  "y": 134
+                },
+                "offset": {
+                  "x": -13,
+                  "y": -23
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 5,
+            "duration": 66.67
+          }, {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 689,
+                  "height": 45,
+                  "width": 58,
+                  "y": 140
+                },
+                "offset": {
+                  "x": -15,
+                  "y": -23
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 6,
+            "duration": 66.67
+          }, {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 751,
+                  "height": 45,
+                  "width": 47,
+                  "y": 140
+                },
+                "offset": {
+                  "x": -11,
+                  "y": -22
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 7,
+            "duration": 66.67
+          }, {
+            "layers": {
+              "layer": {
+                "rect": {
+                  "x": 801,
+                  "height": 43,
+                  "width": 39,
+                  "y": 142
+                },
+                "offset": {
+                  "x": -6,
+                  "y": -21
+                },
+                "number": 1
+              }
+            },
+            "durationAsPercentage": 100,
+            "number": 8,
+            "duration": 66.67
+          }]
+        },
+        "speed": 66.67,
+        "number": 16,
+        "name": "walk-left"
+      }]
+    },
+    "spritesheetSource": "Riku.png"
+  }
 }

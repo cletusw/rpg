@@ -1,43 +1,43 @@
 <polymer-element name="rpg-collidable" attributes="height width x y">
-    <template>
-        <style>
-            @host {
-                :scope {
-                    display: none;
-                }
-            }
-        </style>
-        <content></content>
-    </template>
-    <script>
-        Polymer('rpg-collidable', {
-            height: 0,
-            width: 0,
-            x: 0,
-            y: 0,
-            goTo: function(x, y) {
-                this.x = x;
-                this.y = y;
-            },
-            heightChanged: function() {
-                this.style.height = this.height + 'px';
-            },
-            intersectsWith: function(other) {
-                if (this.x + this.width < other.x) return false;
-                if (this.x > other.x + other.width) return false;
-                if (this.y + this.height < other.y) return false;
-                if (this.y > other.y + other.height) return false;
-                return true;
-            },
-            widthChanged: function() {
-                this.style.width = this.width + 'px';
-            },
-            xChanged: function() {
-                this.style.webkitTransform = 'translateX(' + this.x + 'px) translateY(' + this.y + 'px)';
-            },
-            yChanged: function() {
-                this.style.webkitTransform = 'translateX(' + this.x + 'px) translateY(' + this.y + 'px)';
-            }
-        });
-    </script>
+  <template>
+    <style>
+      @host {
+        :scope {
+          display: none;
+        }
+      }
+    </style>
+    <content></content>
+  </template>
+  <script>
+    Polymer('rpg-collidable', {
+      height: 0,
+      width: 0,
+      x: 0,
+      y: 0,
+      goTo: function(x, y) {
+        this.x = x;
+        this.y = y;
+      },
+      heightChanged: function() {
+        this.style.height = this.height + 'px';
+      },
+      intersectsWith: function(other) {
+        if (this.x + this.width < other.x) return false;
+        if (this.x > other.x + other.width) return false;
+        if (this.y + this.height < other.y) return false;
+        if (this.y > other.y + other.height) return false;
+        return true;
+      },
+      widthChanged: function() {
+        this.style.width = this.width + 'px';
+      },
+      xChanged: function() {
+        this.style.webkitTransform = 'translateX(' + this.x + 'px) translateY(' + this.y + 'px)';
+      },
+      yChanged: function() {
+        this.style.webkitTransform = 'translateX(' + this.x + 'px) translateY(' + this.y + 'px)';
+      }
+    });
+  </script>
 </polymer-element>
