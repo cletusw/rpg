@@ -44,6 +44,10 @@
       rightStop: function() {
         this.velocityX = Math.min(this.velocityX, 0);
       },
+      stop: function() {
+        this.velocityX = 0;
+        this.velocityY = 0;
+      },
       upStart: function() {
         this.velocityY = -this.maxSpeed;
       },

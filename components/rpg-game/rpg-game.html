@@ -1,7 +1,7 @@
 <link rel="import" href="../rpg-animated-sprite/rpg-animated-sprite.html">
 <link rel="import" href="../rpg-collidable/rpg-collidable.html">
 <link rel="import" href="../rpg-scene/rpg-scene.html">
-<link rel="import" href="../rpg-sprite-ai/rpg-sprite-ai.html">
+<link rel="import" href="../rpg-sprite-ai/rpg-wandering-ai.html">
 
 <polymer-element name="rpg-game" attributes="height width">
   <template>
@@ -25,6 +25,7 @@
         top: 0;
       }
     </style>
+    <rpg-wandering-ai></rpg-wandering-ai>
     <div class="wrapper">
       <img src="img/example-bg.png" style="-webkit-transform: translateX({{x}}px) translateY({{y}}px)">
       <rpg-scene id="scene" style="-webkit-transform: translateX({{x}}px) translateY({{y}}px)">
@@ -108,19 +109,6 @@
         this.$.scene.prerender(currentTime);
         this.$['player-avatar'].prerender(currentTime);
         this.$['sprite-0'].prerender(currentTime);
-      },
-      ready: function() {
-        var wanderers = this.shadowRoot.querySelectorAll('[ai=wandering]').array();
-        setInterval(function() {
-          wanderers.forEach(function(sprite) {
-            if (sprite.velocityX) {
-              sprite.rightStop();
-            }
-            else {
-              sprite.rightStart();
-            }
-          });
-        }, 500);
       }
     });
   </script>
