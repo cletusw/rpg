@@ -1,3 +1,4 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../rpg-animated-sprite/rpg-animated-sprite.html">
 <link rel="import" href="../rpg-collidable/rpg-collidable.html">
 <link rel="import" href="../rpg-scene/rpg-scene.html">
@@ -6,10 +7,8 @@
 <polymer-element name="rpg-game" attributes="height width">
   <template>
     <style>
-      @host {
-        :scope {
-          display: block;
-        }
+      :host {
+        display: block;
       }
 
       .wrapper {
@@ -25,12 +24,12 @@
         top: 0;
       }
     </style>
-    <rpg-wandering-ai></rpg-wandering-ai>
+    <!--<rpg-wandering-ai></rpg-wandering-ai>-->
     <div class="wrapper">
       <img src="img/example-bg.png" style="-webkit-transform: translateX({{x}}px) translateY({{y}}px)">
       <rpg-scene id="scene" style="-webkit-transform: translateX({{x}}px) translateY({{y}}px)">
         <rpg-collidable height="64" width="128" x="288" y="350"></rpg-collidable>
-        <rpg-animated-sprite id="sprite-0" height="30" maxSpeed="2" src="img/Riku.png" width="30" x="100" y="100" ai="wandering" on-collision="onWanderingCollision"></rpg-animated-sprite>
+        <rpg-animated-sprite id="sprite-0" height="30" maxSpeed="2" src="img/Riku.png" width="30" x="100" y="100" ai="wandering"></rpg-animated-sprite>
         <rpg-animated-sprite id="player-avatar" height="30" maxSpeed="3" src="img/Riku.png" width="30" x="{{playerX}}" y="{{playerY}}"></rpg-animated-sprite>
       </rpg-scene>
       <img src="img/example-fg.png" style="-webkit-transform: translateX({{x}}px) translateY({{y}}px)">
@@ -101,9 +100,6 @@
           default:
             console.log(event.keyCode);
         }
-      },
-      onWanderingCollision: function(event) {
-        console.log(event.target);
       },
       prerender: function(currentTime) {
         this.$.scene.prerender(currentTime);

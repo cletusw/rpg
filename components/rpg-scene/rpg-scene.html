@@ -1,15 +1,15 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
 <polymer-element name="rpg-scene">
   <template>
     <style>
-      @host {
-        :scope {
-          display: block;
-          position: relative;
-        }
+      :host {
+        display: block;
+        position: relative;
       }
 
-      /* @polyfill @host > :not(:first-child) */
-      ::-webkit-distributed(> :not(:first-child)) {
+      /* @polyfill :host > :not(:first-child) */
+      ::content > :not(:first-child) {
         position: absolute;
         top: 0;
         left: 0;

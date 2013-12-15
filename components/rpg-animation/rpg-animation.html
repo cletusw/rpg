@@ -1,10 +1,11 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/polymer-ajax/polymer-ajax.html">
+
 <polymer-element name="rpg-animation" attributes="currentAnimation src">
   <template>
     <style>
-      @host {
-        :scope {
-          display: block;
-        }
+      :host {
+        display: block;
       }
 
       .anchor {
@@ -25,7 +26,7 @@
         <img class="image" src="{{src}}" style="left: {{imageX}}px; top: {{imageY}}px;">
       </div>
     </div>
-    <polymer-ajax auto url="{{src}}.json" handleAs="json" on-polymer-response="onSpriteMetadataLoaded"></polymer-ajax>
+    <polymer-ajax auto url="{{src}}.json" handleAs="json" on-polymer-response="{{onSpriteMetadataLoaded}}"></polymer-ajax>
   </template>
   <script>
     Polymer('rpg-animation', {
@@ -48,30 +49,28 @@
       },
       currentAnimation: 'idle-down',
       currentFrame: 0,
+      height: 0,
+      imageX: 0,
+      imageY: 0,
       lastUpdateTime: 0,
+      offsetX: 0,
+      offsetY: 0,
       src: '',
-      get height() {
-        return this.animations[this.currentAnimation].frames[this.currentFrame].rect.height;
-      },
-      get offsetX() {
-        return this.animations[this.currentAnimation].frames[this.currentFrame].offset.x;
-      },
-      get offsetY() {
-        return this.animations[this.currentAnimation].frames[this.currentFrame].offset.y;
-      },
-      get width() {
-        return this.animations[this.currentAnimation].frames[this.currentFrame].rect.width;
-      },
-      get imageX() {
-        return -this.animations[this.currentAnimation].frames[this.currentFrame].rect.x;
-      },
-      get imageY() {
-        return -this.animations[this.currentAnimation].frames[this.currentFrame].rect.y;
-      },
+      width: 0,
       currentAnimationChanged: function() {
         this.currentFrame = 0;
       },
+      currentFrameChanged: function() {
+        this.height = this.animations[this.currentAnimation].frames[this.currentFrame].rect.height;
+        this.offsetX = this.animations[this.currentAnimation].frames[this.currentFrame].offset.x;
+        this.offsetY = this.animations[this.currentAnimation].frames[this.currentFrame].offset.y;
+        this.width = this.animations[this.currentAnimation].frames[this.currentFrame].rect.width;
+        this.imageX = -this.animations[this.currentAnimation].frames[this.currentFrame].rect.x;
+        this.imageY = -this.animations[this.currentAnimation].frames[this.currentFrame].rect.y;
+      },
       onSpriteMetadataLoaded: function(event, response) {
+        var animations = {};
+
         response.response.spriteBuddy.animations.animation.forEach(function (animation) {
           var name = animation.name;
           delete animation.name;
@@ -90,12 +89,12 @@
             animation.frames[i] = animation.frames[i].layers.layer;
             delete animation.frames[i].number;
           }
-          this.animations[name] = animation;
+          animations[name] = animation;
         }, this);
 
-        Object.getNotifier(this).notify({
-          type: "updated"
-        });
+        this.animations = animations;
+        this.currentFrame = 0;
+        this.currentFrameChanged(); 
       },
       prerender: function(currentTime) {
         var delta = currentTime - this.lastUpdateTime;

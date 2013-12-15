@@ -15,7 +15,7 @@ license that can be found in the LICENSE file.
  *     <polymer-ajax auto url="http://gdata.youtube.com/feeds/api/videos/" 
  *         params='{"alt":"json", "q":"chrome"}'
  *         handleAs="json"
- *         on-polymer-response="handleResponse">
+ *         on-polymer-response="{{handleResponse}}">
  *     </polymer-ajax>
  *
  * @class polymer-ajax
@@ -36,9 +36,10 @@ license that can be found in the LICENSE file.
  * @event polymer-complete
  */
 -->
+<link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="polymer-xhr.html">
 
-<polymer-element name="polymer-ajax" attributes="url handleAs auto params response">
+<polymer-element name="polymer-ajax" attributes="url handleAs auto params response method headers">
   <script>
     Polymer('polymer-ajax', {
       /**
@@ -89,10 +90,49 @@ license that can be found in the LICENSE file.
        * @type Object
        * @default null
        */
+      response: null,
+      /**
+       * The HTTP method to use such as 'GET', 'POST', 'PUT', 'DELETE'.
+       * Default is 'GET'.
+       *
+       * @attribute method
+       * @type string
+       * @default ''
+       */
+      method: '',
+      /**
+       * HTTP request headers to send.
+       *
+       * Example:
+       *
+       *     <polymer-ajax auto url="http://somesite.com"
+       *         headers='{"X-Requested-With": "XMLHttpRequest"}'
+       *         handleAs="json"
+       *         on-polymer-response="{{handleResponse}}">
+       *     </polymer-ajax>
+       *  
+       * @attribute headers
+       * @type Object
+       * @default null
+       */
+      headers: null,
+      /**
+       * Optional raw body content to send when method === "POST"
+       *
+       * Example:
+       *
+       *     <polymer-ajax method="POST" auto url="http://somesite.com"
+       *         body='{"foo":1, "bar":2}'>
+       *     </polymer-ajax>
+       *  
+       * @attribute body
+       * @type Object
+       * @default null
+       */
+      body: null,
       ready: function() {
         this.xhr = document.createElement('polymer-xhr');
       },
-      response: '',
       receive: function(response, xhr) {
         if (this.isSuccess(xhr)) {
           this.processResponse(xhr);
@@ -141,7 +181,7 @@ license that can be found in the LICENSE file.
             case 'json':
               this.handleAs = 'json';
               break;
-          }        
+          }
         }
         this.autoGo();
       },
@@ -165,13 +205,22 @@ license that can be found in the LICENSE file.
        * @method go
        */
       go: function() {
-        var args = {};
-        args.params = this.params || null;
+        var args = this.xhrArgs || {};
+        // TODO(sjmiles): alternatively, we could force POST if body is set
+        if (this.method === 'POST') {
+          args.body = this.body || args.body;
+        }
+        args.params = this.params || args.params;
         if (args.params && typeof(args.params) == 'string') {
           args.params = JSON.parse(args.params);
         }
+        args.headers = this.headers || args.headers;
+        if (args.headers && typeof(args.headers) == 'string') {
+          args.headers = JSON.parse(args.headers);
+        }
         args.callback = this.receive.bind(this);
         args.url = this.url;
+        args.method = this.method;
         return args.url && this.xhr.request(args);
       }
     });

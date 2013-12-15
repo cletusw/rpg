@@ -1,0 +1,48 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="rpg-wandering-ai">
+  <script>
+    (function() {
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * (max + 1));
+      }
+
+      function move() {
+        var direction = 0//getRandomInt(3);
+        switch(direction) {
+          case 0:
+            this.rightStart();
+            break;
+          case 1:
+            this.leftStart();
+            break;
+          case 2:
+            this.upStart();
+            break;
+          case 3:
+            this.downStart();
+            break;
+        }
+        setTimeout(stop.bind(this), 1000);
+      }
+
+      function stop() {
+        this.stop();
+        setTimeout(move.bind(this), 4000);
+        console.log('stopped');
+      }
+
+      Polymer('rpg-wandering-ai', {
+        ready: function() {
+          this.parentNode.querySelectorAll('[ai=wandering]').array().forEach(function(element) {
+            setTimeout(move.bind(element), 3000);
+            element.addEventListener('collision', function(event) {
+              console.log(this);
+              stop.bind(this)();
+            }.bind(element));
+          });
+        }
+      });
+    })();
+  </script>
+</polymer-element>

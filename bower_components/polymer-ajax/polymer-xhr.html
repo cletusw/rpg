@@ -19,13 +19,13 @@ license that can be found in the LICENSE file.
  * @class polymer-xhr
  */
 -->
+<link rel="import" href="../polymer/polymer.html">
+
 <polymer-element name="polymer-xhr">
   <template>
     <style>
-      @host {
-        * {
-          display: none;
-        }
+      :host {
+        display: none;
       }
     </style>
   </template>
@@ -79,12 +79,12 @@ license that can be found in the LICENSE file.
         if (params && method == 'GET') {
           url += (url.indexOf('?') > 0 ? '&' : '?') + params;
         }
+        xhr.open(method, url, async);
         if (options.responseType) {
           xhr.responseType = options.responseType;
         }
-        xhr.open(method, url, async);
         this.makeReadyStateHandler(xhr, options.callback);
-        this.setRequestHeaders(options.headers);
+        this.setRequestHeaders(xhr, options.headers);
         xhr.send(method == 'POST' ? (options.body || params) : null);
         if (!async) {
           xhr.onreadystatechange(xhr);

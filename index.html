@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Shauna's RPG</title>
+  <head>
+    <meta charset="utf-8">
+    <title>Shauna's RPG</title>
 
-        <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="main.css">
 
-        <script src="lib/polymer-v0.0.20131003.min.js"></script>
-        <link rel="import" href="components/rpg-game/rpg-game.html">
-    </head>
-    <body>
-        <rpg-game id="rpg" height="300" width="400"></rpg-game>
-        <script>
-            document.addEventListener('WebComponentsReady', function() {
-                var game = document.getElementById('rpg');
-                document.body.addEventListener('keydown', game.onKeydown.bind(game));
-                document.body.addEventListener('keyup', game.onKeyup.bind(game));
+    <script src="bower_components/platform/platform.js"></script>
 
-                renderLoop();
+    <link rel="import" href="components/rpg-game/rpg-game.html">
+  </head>
+  <body>
+    <rpg-game id="rpg" height="300" width="400"></rpg-game>
+    <script>
+      document.addEventListener('WebComponentsReady', function() {
+        var game = document.getElementById('rpg');
+        document.body.addEventListener('keydown', game.onKeydown.bind(game));
+        document.body.addEventListener('keyup', game.onKeyup.bind(game));
 
-                function renderLoop(currentTime) {
-                    requestAnimationFrame(renderLoop);
-                    game.prerender(currentTime);
-                }
-            });
-        </script>
-    </body>
+        renderLoop();
+
+        function renderLoop(currentTime) {
+          requestAnimationFrame(renderLoop);
+          game.prerender(currentTime);
+        }
+      });
+    </script>
+  </body>
 </html>
