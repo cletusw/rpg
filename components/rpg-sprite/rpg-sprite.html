@@ -12,13 +12,18 @@
   </template>
   <script>
     Polymer('rpg-sprite', {
+      animationFrameRequestId: 0,
+      direction: 'down',
       maxSpeed: 1,
       velocityX: 0,
       velocityY: 0,
-      get direction() {
+      velocityXChanged: function() {
         var horizontal = (this.velocityX < 0) ? 'left' : ((this.velocityX > 0) ? 'right' : '');
         var vertical = (this.velocityY < 0) ? 'up' : ((this.velocityY > 0) ? 'down' : '');
-        return horizontal + vertical;
+        this.direction = horizontal + vertical;
+      },
+      velocityYChanged: function() {
+        this.velocityXChanged();
       },
       downStart: function() {
         this.velocityY = this.maxSpeed;
@@ -26,13 +31,22 @@
       downStop: function() {
         this.velocityY = Math.min(this.velocityY, 0);
       },
+      enteredView: function() {
+        this.render();
+      },
       leftStart: function() {
         this.velocityX = -this.maxSpeed;
       },
       leftStop: function() {
         this.velocityX = Math.max(this.velocityX, 0);
       },
-      prerender: function(currentTime) {
+      leftView: function() {
+        cancelAnimationFrame(this.animationFrameRequestId);
+        this.animationFrameRequestId = 0;
+      },
+      render: function(currentTime) {
+        this.animationFrameRequestId = requestAnimationFrame(this.render.bind(this));
+
         this.x = this.x + this.velocityX;
         this.y = this.y + this.velocityY;
       },

@@ -17,16 +17,11 @@
   </template>
   <script>
     Polymer('rpg-animated-sprite', {
+      currentAnimation: 'idle-down',
       oldDirection: 'down',
-      get currentAnimation() {
-        return this.direction ? 'walk-' + this.direction : 'idle-' + this.oldDirection;
-      },
       directionChanged: function(oldValue) {
         this.oldDirection = oldValue;
-      },
-      prerender: function(currentTime) {
-        this.super();
-        this.$.animation.prerender(currentTime);
+        this.currentAnimation = this.direction ? 'walk-' + this.direction : 'idle-' + this.oldDirection;
       }
     });
   </script>

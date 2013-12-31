@@ -30,6 +30,7 @@
   </template>
   <script>
     Polymer('rpg-animation', {
+      animationFrameRequestId: 0,
       animations: {
         'idle-down': {
           frames: [{
@@ -68,6 +69,13 @@
         this.imageX = -this.animations[this.currentAnimation].frames[this.currentFrame].rect.x;
         this.imageY = -this.animations[this.currentAnimation].frames[this.currentFrame].rect.y;
       },
+      enteredView: function() {
+        this.render();
+      },
+      leftView: function() {
+        cancelAnimationFrame(this.animationFrameRequestId);
+        this.animationFrameRequestId = 0;
+      },
       onSpriteMetadataLoaded: function(event, response) {
         var animations = {};
 
@@ -96,7 +104,9 @@
         this.currentFrame = 0;
         this.currentFrameChanged(); 
       },
-      prerender: function(currentTime) {
+      render: function(currentTime) {
+        this.animationFrameRequestId = requestAnimationFrame(this.render.bind(this));
+
         var delta = currentTime - this.lastUpdateTime;
         if (delta > this.animations[this.currentAnimation].msPerFrame) {
           this.lastUpdateTime = currentTime;

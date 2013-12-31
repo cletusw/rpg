@@ -43,17 +43,9 @@
       sceneHeight: 640,
       sceneWidth: 640,
       width: 0,
-      get x() {
-        return Math.max(this.width - this.sceneWidth, Math.min(0, this.width / 2 - this.playerX));
-      },
-      get y() {
-        return Math.max(this.height - this.sceneHeight, Math.min(0, this.height / 2 - this.playerY));
-      },
       heightChanged: function() {
         this.style.height = this.height + 'px';
-      },
-      widthChanged: function() {
-        this.style.width = this.width + 'px';
+        this.updateY();
       },
       onKeydown: function (event) {
         var playerAvatar = this.$['player-avatar'];
@@ -101,10 +93,27 @@
             console.log(event.keyCode);
         }
       },
-      prerender: function(currentTime) {
-        this.$.scene.prerender(currentTime);
-        this.$['player-avatar'].prerender(currentTime);
-        this.$['sprite-0'].prerender(currentTime);
+      playerXChanged: function() {
+        this.updateX();
+      },
+      playerYChanged: function() {
+        this.updateY();
+      },
+      sceneHeightChanged: function() {
+        this.updateY();
+      },
+      sceneWidthChanged: function() {
+        this.updateX();
+      },
+      updateX: function() {
+        this.x = Math.max(this.width - this.sceneWidth, Math.min(0, this.width / 2 - this.playerX));
+      },
+      updateY: function() {
+        this.y = Math.max(this.height - this.sceneHeight, Math.min(0, this.height / 2 - this.playerY));
+      },
+      widthChanged: function() {
+        this.style.width = this.width + 'px';
+        this.updateX();
       }
     });
   </script>

@@ -19,7 +19,17 @@
   </template>
   <script>
     Polymer('rpg-scene', {
-      prerender: function(currentTime) {
+      animationFrameRequestId: 0,
+      enteredView: function() {
+        this.render();
+      },
+      leftView: function() {
+        cancelAnimationFrame(this.animationFrameRequestId);
+        this.animationFrameRequestId = 0;
+      },
+      render: function(currentTime) {
+        this.animationFrameRequestId = requestAnimationFrame(this.render.bind(this));
+
         var collidables = Array.prototype.filter.call(this.$.content.getDistributedNodes(), function(element) {
           return element.intersectsWith;
         });
