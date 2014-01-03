@@ -1,0 +1,20 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../rpg-weapon/rpg-weapon.html">
+
+<polymer-element name="rpg-greatsword" extends="rpg-weapon" attributes="height width">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <img src="greatsword.png">
+  </template>
+  <script>
+    Polymer('rpg-greatsword', {
+      baseDamage: 10,
+      height: 48,
+      width: 48
+    });
+  </script>
+</polymer-element>

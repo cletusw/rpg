@@ -1,0 +1,17 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../rpg-collidable/rpg-collidable.html">
+
+<polymer-element name="rpg-weapon" extends="rpg-collidable" attributes="damageModifier">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+  </template>
+  <script>
+    Polymer('rpg-weapon', {
+      damageModifier: 0
+    });
+  </script>
+</polymer-element>
