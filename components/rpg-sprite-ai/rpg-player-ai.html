@@ -1,0 +1,21 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="rpg-player-ai">
+  <script>
+    (function() {
+      Polymer('rpg-player-ai', {
+        enteredView: function() {
+          this.inventory = this.parentNode.getElementsByTagName('rpg-inventory')[0];
+          this.player = this.parentNode.querySelectorAll('[ai=player]')[0];
+          this.player.addEventListener('collision', function(event) {
+            var pickupable = event.detail.other;
+            if (pickupable && pickupable.getAttribute('pickupable') === "") {
+              pickupable.parentNode.removeChild(pickupable);
+              this.inventory.appendChild(pickupable);
+            }
+          }.bind(this));
+        }
+      });
+    })();
+  </script>
+</polymer-element>

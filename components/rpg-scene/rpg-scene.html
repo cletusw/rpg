@@ -58,8 +58,8 @@
                 a.y += intersectionHeight * signY;
               }
 
-              a.fire('collision');
-              b.fire('collision');
+              a.fire('collision', {other: b});
+              b.fire('collision', {other: a});
             }
           });
         });
