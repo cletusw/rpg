@@ -12,12 +12,5 @@
   </head>
   <body>
     <rpg-game id="rpg" height="300" width="400"></rpg-game>
-    <script>
-      document.addEventListener('WebComponentsReady', function() {
-        var game = document.getElementById('rpg');
-        document.body.addEventListener('keydown', game.onKeydown.bind(game));
-        document.body.addEventListener('keyup', game.onKeyup.bind(game));
-      });
-    </script>
   </body>
 </html>

@@ -2,20 +2,66 @@
 
 <polymer-element name="rpg-player-ai">
   <script>
-    (function() {
-      Polymer('rpg-player-ai', {
-        enteredView: function() {
-          this.inventory = this.parentNode.getElementsByTagName('rpg-inventory')[0];
-          this.player = this.parentNode.querySelectorAll('[ai=player]')[0];
-          this.player.addEventListener('collision', function(event) {
-            var pickupable = event.detail.other;
-            if (pickupable && pickupable.getAttribute('pickupable') === "") {
-              pickupable.parentNode.removeChild(pickupable);
-              this.inventory.appendChild(pickupable);
-            }
-          }.bind(this));
+    Polymer('rpg-player-ai', {
+      enteredView: function() {
+        this.inventory = this.parentNode.getElementsByTagName('rpg-inventory')[0];
+        this.player = this.parentNode.querySelectorAll('[ai=player]')[0];
+
+        this.player.addEventListener('collision', function(event) {
+          var pickupable = event.detail.other;
+          if (pickupable && pickupable.getAttribute('pickupable') === "") {
+            pickupable.parentNode.removeChild(pickupable);
+            this.inventory.appendChild(pickupable);
+          }
+        }.bind(this));
+
+        document.body.addEventListener('keydown', this.onKeydown.bind(this));
+        document.body.addEventListener('keyup', this.onKeyup.bind(this));
+      },
+      onKeydown: function (event) {
+        switch (event.keyCode) {
+          case 37:
+          case 65:
+            this.player.leftStart();
+            break;
+          case 39:
+          case 68:
+            this.player.rightStart();
+            break;
+          case 38:
+          case 87:
+            this.player.upStart();
+            break;
+          case 40:
+          case 83:
+            this.player.downStart();
+            break;
+          default:
+            console.log(event.keyCode);
         }
-      });
-    })();
+      },
+      onKeyup: function (event) {
+        switch (event.keyCode) {
+          case 37:
+          case 65:
+            this.player.leftStop();
+            break;
+          case 39:
+          case 68:
+            this.player.rightStop();
+            break;
+          case 38:
+          case 87:
+            this.player.upStop();
+            break;
+          case 40:
+          case 83:
+            this.player.downStop();
+            break;
+          default:
+            console.log(event.keyCode);
+        }
+      }
+    });
   </script>
 </polymer-element>

@@ -58,52 +58,6 @@
         this.style.height = this.height + 'px';
         this.updateY();
       },
-      onKeydown: function (event) {
-        var playerAvatar = this.$['player-avatar'];
-        switch (event.keyCode) {
-          case 37:
-          case 65:
-            playerAvatar.leftStart();
-            break;
-          case 39:
-          case 68:
-            playerAvatar.rightStart();
-            break;
-          case 38:
-          case 87:
-            playerAvatar.upStart();
-            break;
-          case 40:
-          case 83:
-            playerAvatar.downStart();
-            break;
-          default:
-            console.log(event.keyCode);
-        }
-      },
-      onKeyup: function (event) {
-        var playerAvatar = this.$['player-avatar'];
-        switch (event.keyCode) {
-          case 37:
-          case 65:
-            playerAvatar.leftStop();
-            break;
-          case 39:
-          case 68:
-            playerAvatar.rightStop();
-            break;
-          case 38:
-          case 87:
-            playerAvatar.upStop();
-            break;
-          case 40:
-          case 83:
-            playerAvatar.downStop();
-            break;
-          default:
-            console.log(event.keyCode);
-        }
-      },
       playerXChanged: function() {
         this.updateX();
       },
