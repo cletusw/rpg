@@ -30,19 +30,22 @@
       render: function(currentTime) {
         this.animationFrameRequestId = requestAnimationFrame(this.render.bind(this));
 
-        var collidables = Array.prototype.filter.call(this.$.content.getDistributedNodes(), function(element) {
+        var distributedNodes = this.$.content.getDistributedNodes();
+        var collidables = Array.prototype.filter.call(distributedNodes, function(element) {
           return element.intersectsWith;
         });
-        for (var i = collidables.length - 1; i >= 0; --i) {
-          for (var j = i - 1; j >= 0; --j) {
-            var a = collidables[i];
-            var b = collidables[j];
-            if (a.intersectsWith(b)) {
+        var mobiles = Array.prototype.filter.call(distributedNodes, function(element) {
+          return element.velocityX || element.velocityY;
+        });
+
+        mobiles.forEach(function (a) {
+          collidables.forEach(function (b) {
+            if (a != b && a.intersectsWith(b)) {
               var signX = a.x > b.x ? 1 : -1;
               var signY = a.y > b.y ? 1 : -1;
 
-              var intersectionWidth = Math.min(a.x + a.width, b.x + b.width) - Math.max(a.x, b.x);
-              var intersectionHeight = Math.min(a.y + a.height, b.y + b.height) - Math.max(a.y, b.y);
+              var intersectionWidth = Math.min(a.x + a.width, b.x + b.width) - Math.max(a.x, b.x) + 1;
+              var intersectionHeight = Math.min(a.y + a.height, b.y + b.height) - Math.max(a.y, b.y) + 1;
 
               if (Math.abs(intersectionWidth) < Math.abs(intersectionHeight)) {
                 a.x += intersectionWidth * signX;
@@ -54,9 +57,12 @@
                 a.x += intersectionWidth * signX;
                 a.y += intersectionHeight * signY;
               }
+
+              a.fire('collision');
+              b.fire('collision');
             }
-          }
-        }
+          });
+        });
       }
     });
   </script>

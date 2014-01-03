@@ -8,7 +8,7 @@
       }
 
       function move() {
-        var direction = 0//getRandomInt(3);
+        var direction = getRandomInt(3);
         switch(direction) {
           case 0:
             this.rightStart();
@@ -23,22 +23,31 @@
             this.downStart();
             break;
         }
-        setTimeout(stop.bind(this), 1000);
+        nextAction(this, stop, 500);
       }
 
       function stop() {
         this.stop();
-        setTimeout(move.bind(this), 4000);
-        console.log('stopped');
+        nextAction(this, move, 4000);
+      }
+
+      function clearNextAction(element) {
+        clearTimeout(element.nextActionTimeoutId);
+      }
+
+      function nextAction(element, action, delay) {
+        element.nextActionTimeoutId = setTimeout(action.bind(element), delay);
       }
 
       Polymer('rpg-wandering-ai', {
-        ready: function() {
+        enteredView: function() {
           this.parentNode.querySelectorAll('[ai=wandering]').array().forEach(function(element) {
-            setTimeout(move.bind(element), 3000);
+            nextAction(element, move, 3000);
             element.addEventListener('collision', function(event) {
-              console.log(this);
-              stop.bind(this)();
+              if (this.velocityX || this.velocityY) {
+                clearNextAction(element);
+                stop.bind(this)();
+              }
             }.bind(element));
           });
         }
