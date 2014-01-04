@@ -41,14 +41,15 @@
         <rpg-animated-sprite id="player-avatar" height="30" maxSpeed="3" src="img/Riku.png" width="30" x="{{playerX}}" y="{{playerY}}" ai="player"></rpg-animated-sprite>
       </rpg-scene>
       <img src="img/example-fg.png" style="-webkit-transform: translateX({{x}}px) translateY({{y}}px)">
+      <rpg-inventory hidden?="{{!inventoryOpen}}"></rpg-inventory>
     </div>
     <rpg-wandering-ai></rpg-wandering-ai>
     <rpg-player-ai></rpg-player-ai>
-    <rpg-inventory></rpg-inventory>
   </template>
   <script>
     Polymer('rpg-game', {
       height: 0,
+      inventoryOpen: false,
       playerX: 200,
       playerY: 200,
       sceneHeight: 640,

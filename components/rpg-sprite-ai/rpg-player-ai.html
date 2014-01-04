@@ -10,8 +10,9 @@
         this.player.addEventListener('collision', function(event) {
           var pickupable = event.detail.other;
           if (pickupable && pickupable.getAttribute('pickupable') === "") {
-            pickupable.parentNode.removeChild(pickupable);
             this.inventory.appendChild(pickupable);
+            pickupable.x = 0;
+            pickupable.y = 0;
           }
         }.bind(this));
 
