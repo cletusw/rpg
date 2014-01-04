@@ -73,15 +73,27 @@
   <script>
     Polymer('rpg-game', {
       height: 0,
-      inventoryOpen: true,
+      inventoryOpen: false,
       playerX: 200,
       playerY: 200,
       sceneHeight: 640,
       sceneWidth: 640,
       width: 0,
+      enteredView: function() {
+        document.body.addEventListener('keydown', this.onKeydown.bind(this));
+      },
       heightChanged: function() {
         this.style.height = this.height + 'px';
         this.updateY();
+      },
+      onKeydown: function (event) {
+        switch (event.keyCode) {
+          case 73: // "I"
+            this.inventoryOpen = !this.inventoryOpen;
+            break;
+          default:
+            console.log(event.keyCode);
+        }
       },
       playerXChanged: function() {
         this.updateX();

@@ -44,8 +44,6 @@
               this.pickup(this.nearbyPickupable);
             }
             break;
-          default:
-            console.log(event.keyCode);
         }
       },
       onKeyup: function (event) {
@@ -66,8 +64,6 @@
           case 83:
             this.player.downStop();
             break;
-          default:
-            console.log(event.keyCode);
         }
       },
       pickup: function(pickupable) {
