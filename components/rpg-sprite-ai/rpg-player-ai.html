@@ -10,9 +10,7 @@
         this.player.addEventListener('collision', function(event) {
           var pickupable = event.detail.other;
           if (pickupable && pickupable.getAttribute('pickupable') === "") {
-            this.inventory.appendChild(pickupable);
-            pickupable.x = 0;
-            pickupable.y = 0;
+            this.nearbyPickupable = pickupable;
           }
         }.bind(this));
 
@@ -23,19 +21,28 @@
         switch (event.keyCode) {
           case 37:
           case 65:
+            this.nearbyPickupable = null;
             this.player.leftStart();
             break;
           case 39:
           case 68:
+            this.nearbyPickupable = null;
             this.player.rightStart();
             break;
           case 38:
           case 87:
+            this.nearbyPickupable = null;
             this.player.upStart();
             break;
           case 40:
           case 83:
+            this.nearbyPickupable = null;
             this.player.downStart();
+            break;
+          case 32: // Spacebar
+            if (this.nearbyPickupable) {
+              this.pickup(this.nearbyPickupable);
+            }
             break;
           default:
             console.log(event.keyCode);
@@ -62,6 +69,11 @@
           default:
             console.log(event.keyCode);
         }
+      },
+      pickup: function(pickupable) {
+        this.inventory.appendChild(pickupable);
+        pickupable.x = 0;
+        pickupable.y = 0;
       }
     });
   </script>

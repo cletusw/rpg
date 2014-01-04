@@ -25,6 +25,26 @@
         position: absolute;
         top: 0;
       }
+
+      .overlay {
+        background-color: rgba(0,0,0,0.6);
+        height: 100%;
+        width: 100%;
+      }
+
+      .inventory {
+        display: flex;
+        flex-flow: row wrap;
+        padding: 5px;
+      }
+
+      .inventory > * {
+        background-color: rgba(255,255,255,0.7);
+        height: 50px;
+        margin: 5px;
+        padding: 5px;
+        width: 50px;
+      }
     </style>
     <div class="wrapper">
       <img src="img/example-bg.png" style="-webkit-transform: translateX({{x}}px) translateY({{y}}px)">
@@ -41,7 +61,11 @@
         <rpg-animated-sprite id="player-avatar" height="30" maxSpeed="3" src="img/Riku.png" width="30" x="{{playerX}}" y="{{playerY}}" ai="player"></rpg-animated-sprite>
       </rpg-scene>
       <img src="img/example-fg.png" style="-webkit-transform: translateX({{x}}px) translateY({{y}}px)">
-      <rpg-inventory hidden?="{{!inventoryOpen}}"></rpg-inventory>
+      <div hidden?="{{!inventoryOpen}}" class="overlay">
+        <rpg-inventory class="inventory">
+          <rpg-greatsword pickupable></rpg-greatsword>
+        </rpg-inventory>
+      </div>
     </div>
     <rpg-wandering-ai></rpg-wandering-ai>
     <rpg-player-ai></rpg-player-ai>
@@ -49,7 +73,7 @@
   <script>
     Polymer('rpg-game', {
       height: 0,
-      inventoryOpen: false,
+      inventoryOpen: true,
       playerX: 200,
       playerY: 200,
       sceneHeight: 640,
