@@ -3,14 +3,22 @@
 <polymer-element name="rpg-player-ai">
   <script>
     Polymer('rpg-player-ai', {
+      clearNearby: function() {
+        this.nearbyPickupable = null;
+        this.nearbyTalkable = null;
+      },
       enteredView: function() {
         this.inventory = this.parentNode.getElementsByTagName('rpg-inventory')[0];
         this.player = this.parentNode.querySelectorAll('[ai=player]')[0];
 
         this.player.addEventListener('collision', function(event) {
-          var pickupable = event.detail.other;
-          if (pickupable && pickupable.getAttribute('pickupable') === "") {
-            this.nearbyPickupable = pickupable;
+          var other = event.detail.other;
+
+          if (other && other.getAttribute('talkable') === "") {
+            this.nearbyTalkable = other;
+          }
+          else if (other && other.getAttribute('pickupable') === "") {
+            this.nearbyPickupable = other;
           }
         }.bind(this));
 
@@ -21,27 +29,32 @@
         switch (event.keyCode) {
           case 37:
           case 65:
-            this.nearbyPickupable = null;
+            this.clearNearby();
             this.player.leftStart();
             break;
           case 39:
           case 68:
-            this.nearbyPickupable = null;
+            this.clearNearby();
             this.player.rightStart();
             break;
           case 38:
           case 87:
-            this.nearbyPickupable = null;
+            this.clearNearby();
             this.player.upStart();
             break;
           case 40:
           case 83:
-            this.nearbyPickupable = null;
+            this.clearNearby();
             this.player.downStart();
             break;
           case 32: // Spacebar
+            if (this.nearbyTalkable) {
+              this.talkWith(this.nearbyTalkable);
+              this.nearbyTalkable = null;
+            }
             if (this.nearbyPickupable) {
               this.pickup(this.nearbyPickupable);
+              this.nearbyPickupable = null;
             }
             break;
         }
@@ -70,6 +83,9 @@
         this.inventory.appendChild(pickupable);
         pickupable.x = 0;
         pickupable.y = 0;
+      },
+      talkWith: function(talkable) {
+        console.log("Hi! I'm ", talkable);
       }
     });
   </script>

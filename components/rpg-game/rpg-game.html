@@ -57,7 +57,7 @@
 
         <rpg-greatsword x="100" y="300" pickupable></rpg-greatsword>
 
-        <rpg-animated-sprite id="sprite-0" height="30" maxSpeed="2" src="img/Riku.png" width="30" x="100" y="100" ai="wandering"></rpg-animated-sprite>
+        <rpg-animated-sprite id="sprite-0" height="30" maxSpeed="2" src="img/Riku.png" width="30" x="100" y="100" ai="wandering" talkable></rpg-animated-sprite>
         <rpg-animated-sprite id="player-avatar" height="30" maxSpeed="3" src="img/Riku.png" width="30" x="{{playerX}}" y="{{playerY}}" ai="player"></rpg-animated-sprite>
       </rpg-scene>
       <img src="img/example-fg.png" style="-webkit-transform: translateX({{x}}px) translateY({{y}}px)">
@@ -91,8 +91,6 @@
           case 73: // "I"
             this.inventoryOpen = !this.inventoryOpen;
             break;
-          default:
-            console.log(event.keyCode);
         }
       },
       playerXChanged: function() {
