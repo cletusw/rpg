@@ -1,6 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<polymer-element name="rpg-wandering-ai">
+<polymer-element name="rpg-ai-wandering">
   <script>
     (function() {
       function getRandomInt(max) {
@@ -39,9 +39,9 @@
         element.nextActionTimeoutId = setTimeout(action.bind(element), delay);
       }
 
-      Polymer('rpg-wandering-ai', {
+      Polymer('rpg-ai-wandering', {
         enteredView: function() {
-          this.parentNode.querySelectorAll('[ai=wandering]').array().forEach(function(element) {
+          this.parentNode.querySelectorAll('[ai-wandering]').array().forEach(function(element) {
             nextAction(element, move, 3000);
             element.addEventListener('collision', function(event) {
               if (this.velocityX || this.velocityY) {

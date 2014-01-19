@@ -3,8 +3,8 @@
 <link rel="import" href="../rpg-collidable/rpg-collidable.html">
 <link rel="import" href="../rpg-greatsword/rpg-greatsword.html">
 <link rel="import" href="../rpg-scene/rpg-scene.html">
-<link rel="import" href="../rpg-sprite-ai/rpg-player-ai.html">
-<link rel="import" href="../rpg-sprite-ai/rpg-wandering-ai.html">
+<link rel="import" href="../rpg-ai/rpg-ai-player.html">
+<link rel="import" href="../rpg-ai/rpg-ai-wandering.html">
 
 <polymer-element name="rpg-game" attributes="height width">
   <template>
@@ -57,8 +57,8 @@
 
         <rpg-greatsword x="100" y="300" pickupable></rpg-greatsword>
 
-        <rpg-animated-sprite id="sprite-0" height="30" maxSpeed="2" src="img/Riku.png" width="30" x="100" y="100" ai="wandering" talkable></rpg-animated-sprite>
-        <rpg-animated-sprite id="player-avatar" height="30" maxSpeed="3" src="img/Riku.png" width="30" x="{{playerX}}" y="{{playerY}}" ai="player"></rpg-animated-sprite>
+        <rpg-animated-sprite height="30" maxSpeed="2" src="img/Riku.png" width="30" x="100" y="100" ai-wandering talkable></rpg-animated-sprite>
+        <rpg-animated-sprite height="30" maxSpeed="3" src="img/Riku.png" width="30" x="{{playerX}}" y="{{playerY}}" ai-player></rpg-animated-sprite>
       </rpg-scene>
       <img src="img/example-fg.png" style="-webkit-transform: translateX({{x}}px) translateY({{y}}px)">
       <div hidden?="{{!inventoryOpen}}" class="overlay">
@@ -67,8 +67,8 @@
         </rpg-inventory>
       </div>
     </div>
-    <rpg-wandering-ai></rpg-wandering-ai>
-    <rpg-player-ai></rpg-player-ai>
+    <rpg-ai-wandering></rpg-ai-wandering>
+    <rpg-ai-player></rpg-ai-player>
   </template>
   <script>
     Polymer('rpg-game', {

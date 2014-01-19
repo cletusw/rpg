@@ -1,15 +1,15 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<polymer-element name="rpg-player-ai">
+<polymer-element name="rpg-ai-player">
   <script>
-    Polymer('rpg-player-ai', {
+    Polymer('rpg-ai-player', {
       clearNearby: function() {
         this.nearbyPickupable = null;
         this.nearbyTalkable = null;
       },
       enteredView: function() {
         this.inventory = this.parentNode.getElementsByTagName('rpg-inventory')[0];
-        this.player = this.parentNode.querySelectorAll('[ai=player]')[0];
+        this.player = this.parentNode.querySelectorAll('[ai-player]')[0];
 
         this.player.addEventListener('collision', function(event) {
           var other = event.detail.other;
