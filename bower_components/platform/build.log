@@ -1,10 +1,10 @@
 BUILD LOG
 ---------
-Build Time: 2014-01-09T16:42:26
+Build Time: 2014-01-27T10:44:27
 
 NODEJS INFORMATION
 ==================
-nodejs: v0.10.24
+nodejs: v0.10.25
 chai: 1.8.1
 grunt: 0.4.1
 grunt-audit: 0.0.2
@@ -30,18 +30,18 @@ mocha: 1.14.0
 
 REPO REVISIONS
 ==============
-CustomElements: 75798bf6ecf397ac25029974a96af68618baafa0
-HTMLImports: 7dc0c50f38fd89411b01f6fdd98f008d276e022a
+CustomElements: 35cc03c91a21ded60bd599fc0cdffe42692610c1
+HTMLImports: 894b7845822ffc8ba45a36d8143460426bc020c6
 NodeBind: f7cc76749e509e06fa7cbc9ba970f87f5fe33b5c
-PointerEvents: 80457624cc756cc042c076dc4e508201d99ced2d
+PointerEvents: f7dd1052d6aebd5d6fd88d243173358b937358d3
 PointerGestures: 90e93f777b60d817a072da3f482dd1f9bb625c73
-ShadowDOM: de3c0614ddb8201f54b173e297bccc98fab2ac6b
-TemplateBinding: bec956e7420da8940165923807e6e86aafd2aa89
-WeakMap: fc7c7925546282881c6ff4d58103d6355659f56f
-observe-js: 920a6d6ee3160830ff8f807f9e85461c2b852c6b
-platform: e3b798b57065bfb38a7ee5b69176dffb57cfbe3a
-polymer-expressions: 47c7bbf65d4420a0763e0768deaccf96226d02b6
+ShadowDOM: c87e879496491403accf6af705d7afecc1c3eabf
+TemplateBinding: a07d1c64cab82a51fa464f77f3e5cb5989aa5c1a
+WeakMap: a0947a9a0f58f5733f464755c3b86de624b00a5d
+observe-js: 0152d542350239563d0f2cad39d22d3254bd6c2a
+platform: 6f6385273013e096b91f8f10a1131da26ee7cbe8
+polymer-expressions: 034e56a77acf70024281be6867c2864a02577640
 
 BUILD HASHES
 ============
-build/platform.js: 24874b8a9d5781c5d6a100a5f96ca28b6c556666
+build/platform.js: ac0fddcce8ced700a3a24d87e83300b2c35a6a1c
