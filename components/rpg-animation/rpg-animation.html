@@ -1,5 +1,5 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
-<link rel="import" href="../../bower_components/polymer-ajax/polymer-ajax.html">
+<link rel="import" href="../../bower_components/core-ajax/core-ajax.html">
 
 <polymer-element name="rpg-animation" attributes="currentAnimation src">
   <template>
@@ -26,7 +26,7 @@
         <img class="image" src="{{src}}" style="left: {{imageX}}px; top: {{imageY}}px;">
       </div>
     </div>
-    <polymer-ajax auto url="{{src}}.json" handleAs="json" on-polymer-response="{{onSpriteMetadataLoaded}}"></polymer-ajax>
+    <core-ajax auto url="{{src}}.json" handleAs="json" on-core-response="{{onSpriteMetadataLoaded}}"></core-ajax>
   </template>
   <script>
     Polymer('rpg-animation', {
