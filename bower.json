@@ -1,0 +1,11 @@
+{
+  "name": "rpg",
+  "ignore": [
+    "**/*",
+    "bower_components"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#master",
+    "core-ajax": "Polymer/core-ajax#master"
+  }
+}
